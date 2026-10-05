@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
   <defs>
     <linearGradient id="bg" x1="28" y1="16" x2="228" y2="244" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#E38B69"/>
-      <stop offset="1" stop-color="#BF5636"/>
+      <stop offset="0" stop-color="#3A3936"/>
+      <stop offset="1" stop-color="#141413"/>
     </linearGradient>
     <mask id="cut" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256">
       <rect width="256" height="256" fill="#fff"/>
@@ -16,7 +16,7 @@
     </mask>
   </defs>
   <rect x="12" y="12" width="232" height="232" rx="54" fill="url(#bg)"/>
-  <path mask="url(#cut)" fill="#FAF9F5"
+  <path mask="url(#cut)" fill="#FFFFFF"
         d="M92 172 C104 174 120 170 132 164 C146 157 156 152 162 146 C172 137 180 130 185 122 C193 109 198 101 201 91 C205 78 207 64 206 50 C192 52 182 57 171 63 C160 69 151 74 143 82 C133 91 126 98 120 107 C112 117 107 127 103 137 C99 147 95 160 92 172 Z"/>
-  <path d="M58 208 L96 168" stroke="#FAF9F5" stroke-width="9" stroke-linecap="round"/>
+  <path d="M58 208 L96 168" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
 </svg>
