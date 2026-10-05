@@ -1,26 +1,30 @@
 <p align="center">
-  <img src="plume.svg" width="88" alt="Icône de Plume">
+  <img src="folio.svg" width="88" alt="Icône de Folio">
 </p>
 
-<h1 align="center">Plume</h1>
+<h1 align="center">Folio</h1>
 
 <p align="center">
   Un lecteur et éditeur de fichiers Markdown (<code>.md</code>) pour Windows, pensé pour la lecture.
 </p>
 
 <p align="center">
-  <a href="https://github.com/myrvmsr/plume/releases/latest/download/Plume-Setup.exe"><b>Télécharger Plume pour Windows</b></a><br>
+  <a href="https://github.com/myrvmsr/folio/releases/latest/download/Folio-Setup.exe"><b>Télécharger Folio pour Windows</b></a><br>
   <sub>Windows 10 et 11, 64 bits · environ 100 Mo · gratuit</sub><br>
   <sub>Français · English · Español · Deutsch · Nederlands · Italiano · Português</sub>
 </p>
 
 <p align="center">
-  <img src="captures/lecture.png" alt="Plume affichant un document Markdown" width="860">
+  <img src="captures/lecture.png" alt="Folio affichant un document Markdown" width="860">
 </p>
+
+## Nouveau dans la version 1.2
+
+- **Plume devient Folio.** Installez simplement Folio : l'ancienne version de Plume est retirée automatiquement, et vos réglages, espaces et dossiers sont conservés.
 
 ## Nouveau dans la version 1.1
 
-- **Panneau Dossiers** : ajoutez vos dossiers de notes et retrouvez vos documents en arbre. Vous pouvez créer, renommer, ranger par glisser-déposer et mettre à la corbeille sans quitter Plume.
+- **Panneau Dossiers** : ajoutez vos dossiers de notes et retrouvez vos documents en arbre. Vous pouvez créer, renommer, ranger par glisser-déposer et mettre à la corbeille sans quitter Folio.
 - **Enregistrement automatique**, activé par défaut : vos modifications sont enregistrées une seconde après la dernière frappe, comme dans VS Code.
 - **Sept langues** : français, anglais, espagnol, allemand, néerlandais, italien et portugais.
 - **Bouton Copier** sur tous les blocs de code, aussi en mode Édition.
@@ -44,8 +48,8 @@ Déjà installé ? Voir [Mettre à jour](#mettre-à-jour).
 - **Sommaire** cliquable qui suit votre lecture, à gauche ou à droite.
 - **Recherche** dans le document, sans tenir compte des accents : « ete » trouve « été ».
 - **Taille du texte** (aussi avec <kbd>Ctrl</kbd> + molette), **largeur de lecture** et plein écran.
-- **Rechargement automatique** : quand un autre programme (un assistant IA comme Claude, un éditeur…) modifie le fichier, l'affichage suit tout seul. Si vous avez des modifications non enregistrées, Plume vous demande quoi faire au lieu de les écraser.
-- **Liens** : les liens web s'ouvrent dans le navigateur, un lien vers un autre `.md` l'ouvre dans Plume, et les ancres mènent à la bonne section.
+- **Rechargement automatique** : quand un autre programme (un assistant IA comme Claude, un éditeur…) modifie le fichier, l'affichage suit tout seul. Si vous avez des modifications non enregistrées, Folio vous demande quoi faire au lieu de les écraser.
+- **Liens** : les liens web s'ouvrent dans le navigateur, un lien vers un autre `.md` l'ouvre dans Folio, et les ancres mènent à la bonne section.
 - **Export PDF** et **impression**, toujours sur fond blanc.
 
 ### Écrire et modifier
@@ -53,7 +57,7 @@ Déjà installé ? Voir [Mettre à jour](#mettre-à-jour).
 - **Mode Édition** (<kbd>Ctrl</kbd>+<kbd>E</kbd>) : le texte source, coloré, à côté de l'aperçu mis à jour en direct, avec un défilement synchronisé. L'aperçu peut se masquer pour ne garder que le texte. Les blocs de code y ont aussi leur bouton **Copier**.
 - **Enregistrement automatique** : par défaut, une seconde après la dernière frappe. On peut aussi choisir toutes les *N* minutes, au changement d'onglet ou de fenêtre, ou le désactiver.
 - **Mise en forme au clavier** : gras, italique, barré, code, lien, ainsi que rechercher et remplacer.
-- **Correcteur orthographique** (facultatif) et point orange sur l'onglet tant que le document n'est pas enregistré. Si l'enregistrement automatique est désactivé, Plume demande confirmation avant de fermer un document modifié.
+- **Correcteur orthographique** (facultatif) et point orange sur l'onglet tant que le document n'est pas enregistré. Si l'enregistrement automatique est désactivé, Folio demande confirmation avant de fermer un document modifié.
 
 <p align="center">
   <img src="captures/edition.png" alt="Mode Édition : le texte source à gauche, l'aperçu à droite" width="860">
@@ -91,13 +95,13 @@ Déjà installé ? Voir [Mettre à jour](#mettre-à-jour).
 - Passez d'un espace à l'autre d'un clic sur sa pastille ou au clavier.
 - Rangez un onglet dans un autre espace d'un clic droit, ou en le glissant sur la pastille de l'espace.
 - Renommez, recolorez ou supprimez un espace à tout moment.
-- À la réouverture, Plume retrouve vos espaces et leurs onglets comme vous les avez laissés (désactivable).
+- À la réouverture, Folio retrouve vos espaces et leurs onglets comme vous les avez laissés (désactivable).
 
 ### Le thème à votre goût
 
 - **Mode clair, sombre ou automatique** (il suit alors Windows).
 - **Couleur d'accentuation** : huit couleurs proposées, ou n'importe quelle autre.
-- **Couleur de fond et couleur du texte**, réglées séparément pour le mode clair et le mode sombre. Toute l'interface s'accorde à vos couleurs, et Plume prévient si le texte devient difficile à lire.
+- **Couleur de fond et couleur du texte**, réglées séparément pour le mode clair et le mode sombre. Toute l'interface s'accorde à vos couleurs, et Folio prévient si le texte devient difficile à lire.
 - **Quatre polices** (Sérif, Sans, Système, Mono), taille du texte et largeur de lecture.
 
 <p align="center">
@@ -106,13 +110,13 @@ Déjà installé ? Voir [Mettre à jour](#mettre-à-jour).
 
 ### En sept langues
 
-- Plume parle **français, anglais, espagnol, allemand, néerlandais, italien et portugais**. Par défaut, il suit la langue de Windows.
+- Folio parle **français, anglais, espagnol, allemand, néerlandais, italien et portugais**. Par défaut, il suit la langue de Windows.
 - Changement immédiat dans **Paramètres › Langue** : menus, boutons, messages, noms des touches et correcteur orthographique.
 
 ### Des raccourcis clavier personnalisables
 
 - Chaque action a un raccourci modifiable : cliquez dessus, tapez la nouvelle combinaison, c'est enregistré. Une action peut avoir plusieurs raccourcis.
-- Une combinaison ne peut servir qu'à une seule action : si elle est déjà prise, Plume le signale et propose de la réattribuer. Les raccourcis de Windows (copier, coller, annuler…) restent protégés.
+- Une combinaison ne peut servir qu'à une seule action : si elle est déjà prise, Folio le signale et propose de la réattribuer. Les raccourcis de Windows (copier, coller, annuler…) restent protégés.
 - Les claviers AZERTY sont pris en charge.
 
 ### Bien intégré à Windows
@@ -124,30 +128,30 @@ Déjà installé ? Voir [Mettre à jour](#mettre-à-jour).
 
 ## Installation
 
-1. Téléchargez **Plume-Setup.exe** avec le lien en haut de la page. Si le navigateur demande confirmation, choisissez **Conserver**.
-2. Lancez le fichier. Si Windows affiche « Windows a protégé votre ordinateur », cliquez sur **Informations complémentaires**, puis **Exécuter quand même** : cet avertissement apparaît parce que Plume n'est pas signé numériquement.
-3. Plume s'installe en quelques secondes, sans droits administrateur, puis s'ouvre.
+1. Téléchargez **Folio-Setup.exe** avec le lien en haut de la page. Si le navigateur demande confirmation, choisissez **Conserver**.
+2. Lancez le fichier. Si Windows affiche « Windows a protégé votre ordinateur », cliquez sur **Informations complémentaires**, puis **Exécuter quand même** : cet avertissement apparaît parce que Folio n'est pas signé numériquement.
+3. Folio s'installe en quelques secondes, sans droits administrateur, puis s'ouvre.
 
 > [!NOTE]
-> Si le **Contrôle intelligent des applications** de Windows 11 est activé sur votre PC, Windows bloque Plume sans proposer de passer outre. Plume ne peut pas être utilisé sur ces PC pour le moment.
+> Si le **Contrôle intelligent des applications** de Windows 11 est activé sur votre PC, Windows bloque Folio sans proposer de passer outre. Folio ne peut pas être utilisé sur ces PC pour le moment.
 
 ### Ouvrir les fichiers `.md` d'un double-clic
 
-Clic droit sur un fichier `.md` › **Ouvrir avec** › **Choisir une autre application** › **Plume** › **Toujours**.
+Clic droit sur un fichier `.md` › **Ouvrir avec** › **Choisir une autre application** › **Folio** › **Toujours**.
 
 ### Mettre à jour
 
-Plume ne se met pas à jour tout seul. Pour passer à la dernière version :
+Folio ne se met pas à jour tout seul. Pour passer à la dernière version :
 
-1. **Fermez Plume.**
-2. Téléchargez **Plume-Setup.exe** avec le lien en haut de la page : il donne toujours la dernière version.
+1. **Fermez Folio.**
+2. Téléchargez **Folio-Setup.exe** avec le lien en haut de la page : il donne toujours la dernière version.
 3. Lancez-le. Si Windows affiche à nouveau « Windows a protégé votre ordinateur », cliquez sur **Informations complémentaires**, puis **Exécuter quand même**.
 
-Inutile de désinstaller l'ancienne version : la nouvelle la remplace et garde vos réglages, vos espaces et vos dossiers. Votre version s'affiche dans le menu **⋯** › **À propos de Plume**.
+Inutile de désinstaller l'ancienne version : la nouvelle la remplace et garde vos réglages, vos espaces et vos dossiers. Votre version s'affiche dans le menu **⋯** › **À propos de Folio**.
 
 ### Désinstaller
 
-**Paramètres** de Windows › **Applications** › **Applications installées** › **Plume** › **Désinstaller**.
+**Paramètres** de Windows › **Applications** › **Applications installées** › **Folio** › **Désinstaller**.
 
 ## Raccourcis par défaut
 
@@ -172,4 +176,4 @@ Inutile de désinstaller l'ancienne version : la nouvelle la remplace et garde v
 
 ---
 
-<sub>Plume intègre des logiciels libres (Electron, markdown-it, KaTeX, Mermaid, CodeMirror, highlight.js…) et les polices Source Serif 4, Inter et JetBrains Mono. Leurs licences sont reproduites dans <code>THIRD-PARTY-NOTICES.txt</code>, dans le dossier d'installation de Plume.</sub>
+<sub>Folio intègre des logiciels libres (Electron, markdown-it, KaTeX, Mermaid, CodeMirror, highlight.js…) et les polices Source Serif 4, Inter et JetBrains Mono. Leurs licences sont reproduites dans <code>THIRD-PARTY-NOTICES.txt</code>, dans le dossier d'installation de Folio.</sub>
