@@ -10,19 +10,29 @@
 
 <p align="center">
   <a href="https://github.com/myrvmsr/plume/releases/latest/download/Plume-Setup.exe"><b>Télécharger Plume pour Windows</b></a><br>
-  <sub>Windows 10 et 11, 64 bits · environ 100 Mo · gratuit</sub>
+  <sub>Windows 10 et 11, 64 bits · environ 100 Mo · gratuit</sub><br>
+  <sub>Français · English · Español · Deutsch · Nederlands · Italiano · Português</sub>
 </p>
 
 <p align="center">
   <img src="captures/lecture.png" alt="Plume affichant un document Markdown" width="860">
 </p>
 
+## Nouveau dans la version 1.1
+
+- **Panneau Dossiers** : ajoutez vos dossiers de notes et retrouvez vos documents en arbre. Vous pouvez créer, renommer, ranger par glisser-déposer et mettre à la corbeille sans quitter Plume.
+- **Enregistrement automatique**, activé par défaut : vos modifications sont enregistrées une seconde après la dernière frappe, comme dans VS Code.
+- **Sept langues** : français, anglais, espagnol, allemand, néerlandais, italien et portugais.
+- **Bouton Copier** sur tous les blocs de code, aussi en mode Édition.
+
+Déjà installé ? Voir [Mettre à jour](#mettre-à-jour).
+
 ## Fonctionnalités
 
 ### Un affichage soigné
 
 - Une typographie pensée pour la lecture : titres bien hiérarchisés, listes, citations, tableaux, images et liens.
-- **Code** coloré dans près de 200 langages, avec un bouton **Copier**.
+- **Code** coloré dans près de 200 langages. Un bouton **Copier** sur chaque bloc copie tout le code d'un clic, sans rien sélectionner. Il reste à portée de main pendant qu'on fait défiler un long bloc.
 - **Formules mathématiques** (`$…$` et `$$…$$`).
 - **Diagrammes** Mermaid (organigrammes, séquences, Gantt…), aux couleurs du thème.
 - **Encadrés** `> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]` et `[!CAUTION]`.
@@ -40,12 +50,24 @@
 
 ### Écrire et modifier
 
-- **Mode Édition** (<kbd>Ctrl</kbd>+<kbd>E</kbd>) : le texte source, coloré, à côté de l'aperçu mis à jour en direct, avec un défilement synchronisé. L'aperçu peut se masquer pour ne garder que le texte.
+- **Mode Édition** (<kbd>Ctrl</kbd>+<kbd>E</kbd>) : le texte source, coloré, à côté de l'aperçu mis à jour en direct, avec un défilement synchronisé. L'aperçu peut se masquer pour ne garder que le texte. Les blocs de code y ont aussi leur bouton **Copier**.
+- **Enregistrement automatique** : par défaut, une seconde après la dernière frappe. On peut aussi choisir toutes les *N* minutes, au changement d'onglet ou de fenêtre, ou le désactiver.
 - **Mise en forme au clavier** : gras, italique, barré, code, lien, ainsi que rechercher et remplacer.
-- **Correcteur orthographique** (facultatif) et point orange sur l'onglet tant que le document n'est pas enregistré. Plume demande confirmation avant de fermer un document modifié.
+- **Correcteur orthographique** (facultatif) et point orange sur l'onglet tant que le document n'est pas enregistré. Si l'enregistrement automatique est désactivé, Plume demande confirmation avant de fermer un document modifié.
 
 <p align="center">
   <img src="captures/edition.png" alt="Mode Édition : le texte source à gauche, l'aperçu à droite" width="860">
+</p>
+
+### Vos dossiers, rangés comme sur votre disque
+
+- Le bouton en forme de dossier, à côté du logo, ouvre le **panneau Dossiers**. Ajoutez-y un ou plusieurs dossiers : leurs sous-dossiers et leurs documents Markdown s'affichent en arbre, et un clic ouvre un document.
+- **Créez** un document ou un sous-dossier depuis les boutons qui apparaissent au survol d'un dossier ; le nom se tape directement dans l'arbre.
+- **Renommez** (<kbd>F2</kbd>), **rangez** un fichier en le glissant sur un autre dossier, ou **mettez-le à la corbeille** (<kbd>Suppr</kbd>), récupérable dans la corbeille de Windows. Les onglets ouverts suivent le mouvement.
+- Le panneau se met à jour tout seul quand un autre programme ajoute ou supprime des fichiers. Les dossiers cachés (`.git`, `.obsidian`…) n'y apparaissent pas.
+
+<p align="center">
+  <img src="captures/dossiers.png" alt="Le panneau Dossiers : un arbre de notes à gauche, le document ouvert à droite" width="860">
 </p>
 
 ### Onglets horizontaux ou verticaux
@@ -82,6 +104,11 @@
   <img src="captures/apparence.png" alt="Paramètres d'apparence avec un thème bleu personnalisé" width="860">
 </p>
 
+### En sept langues
+
+- Plume parle **français, anglais, espagnol, allemand, néerlandais, italien et portugais**. Par défaut, il suit la langue de Windows.
+- Changement immédiat dans **Paramètres › Langue** : menus, boutons, messages, noms des touches et correcteur orthographique.
+
 ### Des raccourcis clavier personnalisables
 
 - Chaque action a un raccourci modifiable : cliquez dessus, tapez la nouvelle combinaison, c'est enregistré. Une action peut avoir plusieurs raccourcis.
@@ -90,7 +117,7 @@
 
 ### Bien intégré à Windows
 
-- Ouvrez vos `.md` d'un double-clic, en les glissant dans la fenêtre ou depuis les **fichiers récents** de l'écran d'accueil.
+- Ouvrez vos `.md` d'un double-clic, en les glissant dans la fenêtre, depuis le **panneau Dossiers** ou depuis les **fichiers récents** de l'écran d'accueil.
 - Une seule fenêtre : un fichier ouvert depuis l'Explorateur s'ajoute en onglet.
 - Copier le texte Markdown ou le chemin du fichier, afficher le fichier dans l'Explorateur.
 - Fonctionne **hors ligne** : les polices et les outils d'affichage sont intégrés.
@@ -110,7 +137,13 @@ Clic droit sur un fichier `.md` › **Ouvrir avec** › **Choisir une autre appl
 
 ### Mettre à jour
 
-Téléchargez et lancez la nouvelle version : elle remplace l'ancienne et garde vos réglages.
+Plume ne se met pas à jour tout seul. Pour passer à la dernière version :
+
+1. **Fermez Plume.**
+2. Téléchargez **Plume-Setup.exe** avec le lien en haut de la page : il donne toujours la dernière version.
+3. Lancez-le. Si Windows affiche à nouveau « Windows a protégé votre ordinateur », cliquez sur **Informations complémentaires**, puis **Exécuter quand même**.
+
+Inutile de désinstaller l'ancienne version : la nouvelle la remplace et garde vos réglages, vos espaces et vos dossiers. Votre version s'affiche dans le menu **⋯** › **À propos de Plume**.
 
 ### Désinstaller
 
@@ -126,6 +159,7 @@ Téléchargez et lancez la nouvelle version : elle remplace l'ancienne et garde 
 | Afficher ou masquer l'aperçu (édition) | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>P</kbd> |
 | Rechercher | <kbd>Ctrl</kbd>+<kbd>F</kbd> |
 | Sommaire | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>O</kbd> |
+| Panneau Dossiers | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>D</kbd> |
 | Onglet suivant / onglet n° 1 à 9 | <kbd>Ctrl</kbd>+<kbd>Tab</kbd> / <kbd>Ctrl</kbd>+<kbd>1</kbd>…<kbd>9</kbd> |
 | Rouvrir l'onglet fermé | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>T</kbd> |
 | Panneau vertical : déplier ou réduire | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>B</kbd> |
