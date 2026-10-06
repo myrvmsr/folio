@@ -5,7 +5,7 @@
 <h1 align="center">Folio</h1>
 
 <p align="center">
-  Un lecteur et éditeur de fichiers Markdown (<code>.md</code>) pour Windows, Mac et Linux, pensé pour la lecture.
+  Un lecteur et éditeur de fichiers Markdown (<code>.md</code>) pour Windows et Linux, pensé pour la lecture.
 </p>
 
 <p align="center">
@@ -16,8 +16,6 @@
 | Votre ordinateur | Télécharger |
 | --- | --- |
 | Windows 10 ou 11, 64 bits | [Installateur Windows](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Setup.exe) |
-| Mac avec puce Apple (M1, M2, M3, M4…) | [Folio pour Mac Apple Silicon](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Mac-arm64.dmg) |
-| Mac avec processeur Intel | [Folio pour Mac Intel](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Mac-x64.dmg) |
 | Ubuntu / Debian, 64 bits | [Paquet Linux .deb](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.deb) |
 | Autres distributions Linux, 64 bits | [Version portable AppImage](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.AppImage) |
 
@@ -29,9 +27,9 @@ Les fichiers [SHA256SUMS.txt](https://github.com/myrvmsr/folio/releases/latest/d
 
 ## Nouveau dans la version 1.3
 
-- **Folio arrive sur Mac et Linux.** Deux versions Mac (Apple Silicon et Intel), un paquet Linux `.deb` et une version portable `.AppImage`.
-- Raccourcis avec **⌘ sur Mac**, ouverture des fichiers depuis Finder et gestion des chemins propre à chaque système.
-- Les installateurs sont vérifiés sur Windows, macOS Intel, macOS Apple Silicon et Ubuntu avant publication : démarrage, affichage Markdown, édition, enregistrement automatique, opérations sur les dossiers et création de PDF.
+- **Folio arrive sur Linux.** Un paquet `.deb` pour Ubuntu / Debian et une version portable `.AppImage`.
+- Ouverture des fichiers depuis les gestionnaires de fichiers Linux et gestion des chemins propre à chaque système.
+- Les installateurs sont vérifiés sur Windows et Ubuntu avant publication : démarrage, affichage Markdown, édition, enregistrement automatique, opérations sur les dossiers et création de PDF.
 
 ## Nouveau dans la version 1.2
 
@@ -156,20 +154,6 @@ Déjà installé ? Voir [Mettre à jour](#mettre-à-jour).
 
 Clic droit sur un fichier `.md` › **Ouvrir avec** › **Choisir une autre application** › **Folio** › **Toujours**.
 
-### Mac
-
-**macOS 13 (Ventura) ou version ultérieure**, sur Intel ou Apple Silicon. Les installateurs sont vérifiés sous macOS 15.
-
-1. Choisissez la version **Apple Silicon** ou **Intel**. Vous pouvez vérifier votre processeur dans le menu Apple › **À propos de ce Mac**.
-2. Ouvrez le fichier `.dmg`, puis glissez **Folio** dans **Applications**.
-3. Lancez Folio depuis **Applications**.
-
-Cette première version Mac n’est pas encore validée par Apple. Si macOS bloque l’ouverture, après avoir essayé de lancer Folio, allez dans **Réglages Système › Confidentialité et sécurité › Ouvrir quand même**, puis confirmez. Voir les [instructions d’Apple](https://support.apple.com/fr-fr/102445).
-
-Pour ouvrir les `.md` avec Folio par défaut : sélectionnez un fichier dans Finder › **Lire les informations › Ouvrir avec › Folio › Tout modifier**.
-
-Sur Mac, les raccourcis principaux utilisent **⌘** à la place de **Ctrl** : ⌘+O pour ouvrir, ⌘+S pour enregistrer, ⌘+E pour éditer. **Ctrl+Tab** reste le raccourci pour changer d’onglet ; **Ctrl+⌘+F** active le plein écran.
-
 ### Linux
 
 **Ubuntu / Debian :** téléchargez le fichier `.deb`, puis ouvrez-le avec votre gestionnaire de logiciels. Vous pouvez aussi l’installer depuis son dossier avec :
@@ -199,20 +183,19 @@ Folio ne se met pas à jour tout seul. Pour passer à la dernière version :
 
 1. **Fermez Folio.**
 2. Téléchargez la version correspondant à votre système avec les liens en haut de la page.
-3. Sur Windows, lancez l’installateur. Sur Mac, remplacez Folio dans **Applications**. Sur Linux, installez le nouveau `.deb` ou remplacez votre AppImage.
+3. Sur Windows, lancez l’installateur. Sur Linux, installez le nouveau `.deb` ou remplacez votre AppImage.
 
 Inutile de désinstaller l'ancienne version : la nouvelle la remplace et garde vos réglages, vos espaces et vos dossiers. Votre version s'affiche dans le menu **⋯** › **À propos de Folio**.
 
 ### Désinstaller
 
 - **Windows :** **Paramètres › Applications › Applications installées › Folio › Désinstaller**.
-- **Mac :** placez Folio depuis **Applications** dans la corbeille.
 - **Linux .deb :** désinstallez Folio avec votre gestionnaire de logiciels ou `sudo apt remove folio-markdown`.
 - **Linux AppImage :** supprimez le fichier AppImage.
 
 ## Raccourcis par défaut
 
-Le tableau utilise les touches Windows / Linux. Sur Mac, utilisez **⌘** à la place de **Ctrl**, avec les exceptions précisées dans les instructions Mac ci-dessus.
+Le tableau utilise les touches Windows / Linux.
 
 | Action | Raccourci |
 | --- | --- |
