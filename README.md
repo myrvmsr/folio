@@ -1,221 +1,201 @@
 <p align="center">
-  <img src="folio.svg" width="88" alt="Icône de Folio">
+  <img src="folio.svg" width="88" alt="Folio icon">
 </p>
 
 <h1 align="center">Folio</h1>
 
 <p align="center">
-  Un lecteur et éditeur de fichiers Markdown (<code>.md</code>) pour Windows et Linux, pensé pour la lecture.
+  A Markdown reader and editor for Windows and Linux.
 </p>
 
 <p align="center">
-  <b>Gratuit · fonctionne hors ligne</b><br>
-  <sub>Français · English · Español · Deutsch · Nederlands · Italiano · Português</sub>
+  <b>Free · works offline</b><br>
+  <sub>French · English · Spanish · German · Dutch · Italian · Portuguese</sub>
 </p>
 
-| Votre ordinateur | Télécharger |
+| Your system | Download |
 | --- | --- |
-| Windows 10 ou 11, 64 bits | [Installateur Windows](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Setup.exe) |
-| Ubuntu / Debian, 64 bits | [Paquet Linux .deb](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.deb) |
-| Autres distributions Linux, 64 bits | [Version portable AppImage](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.AppImage) |
+| Windows 10 or 11, 64-bit | [Windows installer](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Setup.exe) |
+| Ubuntu / Debian, 64-bit | [Linux .deb package](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.deb) |
+| Linux, 64-bit (portable) | [AppImage](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.AppImage) |
 
-Les fichiers [SHA256SUMS.txt](https://github.com/myrvmsr/folio/releases/latest/download/SHA256SUMS.txt) permettent de vérifier l’intégrité des téléchargements.
+Use [SHA256SUMS.txt](https://github.com/myrvmsr/folio/releases/latest/download/SHA256SUMS.txt) to check the files after downloading.
 
-<p align="center">
-  <img src="captures/lecture.png" alt="Folio affichant un document Markdown" width="860">
-</p>
+## What's new in 1.3
 
-## Nouveau dans la version 1.3
+- **Linux support:** a `.deb` package for Ubuntu / Debian and a portable AppImage.
+- Open Markdown files from your Linux file manager.
+- On Linux, files such as `Note.md` and `note.md` are handled as separate files.
 
-- **Folio arrive sur Linux.** Un paquet `.deb` pour Ubuntu / Debian et une version portable `.AppImage`.
-- Ouverture des fichiers depuis les gestionnaires de fichiers Linux et gestion des chemins propre à chaque système.
-- Les installateurs sont vérifiés sur Windows et Ubuntu avant publication : démarrage, affichage Markdown, édition, enregistrement automatique, opérations sur les dossiers et création de PDF.
+Already installed? See [Update](#update).
 
-## Nouveau dans la version 1.2
+## Why Folio?
 
-- **Plume devient Folio.** Installez simplement Folio : l'ancienne version de Plume est retirée automatiquement, et vos réglages, espaces et dossiers sont conservés.
+Folio keeps reading and editing Markdown simple. You can read your notes, manage your files and change the look in one app.
 
-## Nouveau dans la version 1.1
+- **A clear view:** read your documents with simple menus and an outline to find each section.
+- **Workspaces:** keep work, personal notes and projects in separate spaces, each with its own tabs.
+- **Several folders:** open your notes folders together in one panel.
+- **Your own look:** choose the font, text size, theme and colors that suit you.
 
-- **Panneau Dossiers** : ajoutez vos dossiers de notes et retrouvez vos documents en arbre. Vous pouvez créer, renommer, ranger par glisser-déposer et mettre à la corbeille sans quitter Folio.
-- **Enregistrement automatique**, activé par défaut : vos modifications sont enregistrées une seconde après la dernière frappe, comme dans VS Code.
-- **Sept langues** : français, anglais, espagnol, allemand, néerlandais, italien et portugais.
-- **Bouton Copier** sur tous les blocs de code, aussi en mode Édition.
+Your files stay on your computer. You can work offline.
 
-Déjà installé ? Voir [Mettre à jour](#mettre-à-jour).
+## Features
 
-## Fonctionnalités
+### Reading
 
-### Un affichage soigné
-
-- Une typographie pensée pour la lecture : titres bien hiérarchisés, listes, citations, tableaux, images et liens.
-- **Code** coloré dans près de 200 langages. Un bouton **Copier** sur chaque bloc copie tout le code d'un clic, sans rien sélectionner. Il reste à portée de main pendant qu'on fait défiler un long bloc.
-- **Formules mathématiques** (`$…$` et `$$…$$`).
-- **Diagrammes** Mermaid (organigrammes, séquences, Gantt…), aux couleurs du thème.
-- **Encadrés** `> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]` et `[!CAUTION]`.
-- **Listes de tâches cliquables** : cocher une case met le fichier à jour.
-- Notes de bas de page, sections repliables, métadonnées YAML présentées dans une fiche « Propriétés », adresses web transformées en liens.
-
-### Une lecture confortable
-
-- **Sommaire** cliquable qui suit votre lecture, à gauche ou à droite.
-- **Recherche** dans le document, sans tenir compte des accents : « ete » trouve « été ».
-- **Taille du texte** (aussi avec <kbd>Ctrl</kbd> + molette), **largeur de lecture** et plein écran.
-- **Rechargement automatique** : quand un autre programme (un assistant IA comme Claude, un éditeur…) modifie le fichier, l'affichage suit tout seul. Si vous avez des modifications non enregistrées, Folio vous demande quoi faire au lieu de les écraser.
-- **Liens** : les liens web s'ouvrent dans le navigateur, un lien vers un autre `.md` l'ouvre dans Folio, et les ancres mènent à la bonne section.
-- **Export PDF** et **impression**, toujours sur fond blanc.
-
-### Écrire et modifier
-
-- **Mode Édition** (<kbd>Ctrl</kbd>+<kbd>E</kbd>) : le texte source, coloré, à côté de l'aperçu mis à jour en direct, avec un défilement synchronisé. L'aperçu peut se masquer pour ne garder que le texte. Les blocs de code y ont aussi leur bouton **Copier**.
-- **Enregistrement automatique** : par défaut, une seconde après la dernière frappe. On peut aussi choisir toutes les *N* minutes, au changement d'onglet ou de fenêtre, ou le désactiver.
-- **Mise en forme au clavier** : gras, italique, barré, code, lien, ainsi que rechercher et remplacer.
-- **Correcteur orthographique** (facultatif) et point orange sur l'onglet tant que le document n'est pas enregistré. Si l'enregistrement automatique est désactivé, Folio demande confirmation avant de fermer un document modifié.
+- Headings, lists, quotes, tables, images and links.
+- Code highlighting and a **Copy** button on code blocks.
+- Math formulas and Mermaid diagrams.
+- Task lists you can click, note and warning boxes, footnotes and sections you can fold.
+- YAML information at the top of a file is shown in a **Properties** panel.
+- An outline to jump to headings, and search that ignores accents.
 
 <p align="center">
-  <img src="captures/edition.png" alt="Mode Édition : le texte source à gauche, l'aperçu à droite" width="860">
+  <img src="captures/lecture.png" alt="A Markdown document open in Folio" width="860">
 </p>
 
-### Vos dossiers, rangés comme sur votre disque
+### Editing
 
-- Le bouton en forme de dossier, à côté du logo, ouvre le **panneau Dossiers**. Ajoutez-y un ou plusieurs dossiers : leurs sous-dossiers et leurs documents Markdown s'affichent en arbre, et un clic ouvre un document.
-- **Créez** un document ou un sous-dossier depuis les boutons qui apparaissent au survol d'un dossier ; le nom se tape directement dans l'arbre.
-- **Renommez** (<kbd>F2</kbd>), **rangez** un fichier en le glissant sur un autre dossier, ou **mettez-le à la corbeille** (<kbd>Suppr</kbd>), récupérable dans la corbeille du système. Les onglets ouverts suivent le mouvement.
-- Le panneau se met à jour tout seul quand un autre programme ajoute ou supprime des fichiers. Les dossiers cachés (`.git`, `.obsidian`…) n'y apparaissent pas.
+- Edit the Markdown text next to a live preview. You can hide the preview.
+- **Auto save:** save one second after a change, at a set time interval or when switching tabs or windows. You can also turn it off.
+- Keyboard shortcuts for bold, italic, strikethrough, code and links.
+- Find and replace, and an optional spell checker.
 
 <p align="center">
-  <img src="captures/dossiers.png" alt="Le panneau Dossiers : un arbre de notes à gauche, le document ouvert à droite" width="860">
+  <img src="captures/edition.png" alt="Markdown text on the left and a live preview on the right" width="860">
 </p>
 
-### Onglets horizontaux ou verticaux
+### Folders
 
-- Plusieurs documents ouverts en **onglets** : on passe de l'un à l'autre au clavier, on rouvre un onglet fermé par erreur, on ferme tous les autres d'un clic droit.
-- Les onglets se placent **en haut de la fenêtre**, comme dans un navigateur, ou **dans un panneau vertical** à gauche, comme dans Brave. Ce panneau a trois états :
-  - **déplié** : le nom de chaque document ; glissez son bord pour l'élargir ;
-  - **réduit** : une fine colonne d'icônes qui se déplie au survol de la souris, sans déplacer le texte ;
-  - **masqué** : plus rien n'est affiché, et le panneau ressort dès que la souris touche le bord gauche de la fenêtre. Un bouton dans le panneau le masque, et un raccourci le masque ou le réaffiche.
+- Add several folders and browse their files in the **Folders** panel.
+- Create files and folders, rename them, move them by drag and drop, or send them to the system trash.
+- Open tabs follow files when you rename or move them.
+- The panel updates when files change. Hidden folders such as `.git` and `.obsidian` stay out of the list.
+
+<p align="center">
+  <img src="captures/dossiers.png" alt="Folders and documents in the Folders panel" width="860">
+</p>
+
+### Tabs
+
+- Open several documents in tabs, at the top or on the left.
+- Keep the left panel open, show only its icons, or hide it. A hidden panel appears when you move the mouse to the left edge.
+- Switch tabs with the keyboard, reopen a closed tab, or close all other tabs.
 
 <table>
   <tr>
-    <td align="center"><img src="captures/onglets-verticaux.png" alt="Panneau d'onglets vertical déplié"><br><sub>Panneau déplié</sub></td>
-    <td align="center"><img src="captures/onglets-reduits.png" alt="Panneau d'onglets vertical réduit à une colonne d'icônes"><br><sub>Panneau réduit</sub></td>
+    <td align="center"><img src="captures/onglets-verticaux.png" alt="The vertical tab panel, expanded"><br><sub>Expanded tabs</sub></td>
+    <td align="center"><img src="captures/onglets-reduits.png" alt="The vertical tab panel, collapsed to icons"><br><sub>Tabs as icons</sub></td>
   </tr>
 </table>
 
-### Des espaces pour ranger vos onglets
+### Workspaces
 
-- Créez autant d'**espaces** que vous voulez (« Travail », « Perso », « Projet »…), chacun avec **son nom et sa couleur** et ses propres onglets.
-- Passez d'un espace à l'autre d'un clic sur sa pastille ou au clavier.
-- Rangez un onglet dans un autre espace d'un clic droit, ou en le glissant sur la pastille de l'espace.
-- Renommez, recolorez ou supprimez un espace à tout moment.
-- À la réouverture, Folio retrouve vos espaces et leurs onglets comme vous les avez laissés (désactivable).
+- Create **spaces**, each with its own name, color and tabs.
+- Move a tab to another space, and switch spaces with a click or a shortcut.
+- Folio can reopen your spaces and tabs when you start the app.
 
-### Le thème à votre goût
+### Appearance
 
-- **Mode clair, sombre ou automatique** (il suit alors le système).
-- **Couleur d'accentuation** : huit couleurs proposées, ou n'importe quelle autre.
-- **Couleur de fond et couleur du texte**, réglées séparément pour le mode clair et le mode sombre. Toute l'interface s'accorde à vos couleurs, et Folio prévient si le texte devient difficile à lire.
-- **Quatre polices** (Sérif, Sans, Système, Mono), taille du texte et largeur de lecture.
+- Light, dark or automatic theme.
+- Change the accent, background and text colors.
+- Choose from four fonts: **Serif**, **Sans**, **System** and **Mono**.
+- Change the text size and reading width, or use full screen.
 
 <p align="center">
-  <img src="captures/apparence.png" alt="Paramètres d'apparence avec un thème bleu personnalisé" width="860">
+  <img src="captures/apparence.png" alt="Appearance settings with custom colors" width="860">
 </p>
 
-### En sept langues
+### Languages and shortcuts
 
-- Folio parle **français, anglais, espagnol, allemand, néerlandais, italien et portugais**. Par défaut, il suit la langue du système.
-- Changement immédiat dans **Paramètres › Langue** : menus, boutons, messages, noms des touches et correcteur orthographique.
+- Seven languages: French, English, Spanish, German, Dutch, Italian and Portuguese.
+- Folio uses your system language by default. Change it in **Settings › Language**.
+- Change keyboard shortcuts in Settings with **F1**. Folio checks for conflicts and supports AZERTY keyboards.
 
-### Des raccourcis clavier personnalisables
+### Files and export
 
-- Chaque action a un raccourci modifiable : cliquez dessus, tapez la nouvelle combinaison, c'est enregistré. Une action peut avoir plusieurs raccourcis.
-- Une combinaison ne peut servir qu'à une seule action : si elle est déjà prise, Folio le signale et propose de la réattribuer. Les raccourcis du système (copier, coller, annuler…) restent protégés.
-- Les claviers AZERTY sont pris en charge.
-
-### Vos fichiers sur chaque système
-
-- Ouvrez vos `.md` d'un double-clic, en les glissant dans la fenêtre, depuis le **panneau Dossiers** ou depuis les **fichiers récents** de l'écran d'accueil.
-- Une seule fenêtre : un fichier ouvert depuis le gestionnaire de fichiers s'ajoute en onglet.
-- Copier le texte Markdown ou le chemin du fichier, afficher le fichier dans le gestionnaire de fichiers.
-- Fonctionne **hors ligne** : les polices et les outils d'affichage sont intégrés.
+- Open `.md` files with a double click, drag and drop, the Folders panel or the recent files list.
+- Reload files when another app changes them. Folio asks what to do if you have unsaved changes.
+- Web links open in your browser. Links to other Markdown files open in Folio.
+- Copy the Markdown text or file path, or show a file in your file manager.
+- Export to PDF or print on a white background.
 
 ## Installation
 
 ### Windows
 
-1. Téléchargez **Folio-Setup.exe** avec le lien en haut de la page. Si le navigateur demande confirmation, choisissez **Conserver**.
-2. Lancez le fichier. Si Windows affiche « Windows a protégé votre ordinateur », cliquez sur **Informations complémentaires**, puis **Exécuter quand même** : cet avertissement apparaît parce que Folio n'est pas signé numériquement.
-3. Folio s'installe en quelques secondes, sans droits administrateur, puis s'ouvre.
+1. Download **Folio-Setup.exe** from the table above. If your browser asks, choose **Keep**.
+2. Run the file. If Windows shows “Windows protected your PC”, click **More info**, then **Run anyway**. This message appears because Folio is not digitally signed.
+3. Folio installs for your user account, without administrator rights, and opens.
 
 > [!NOTE]
-> Si le **Contrôle intelligent des applications** de Windows 11 est activé sur votre PC, Windows bloque Folio sans proposer de passer outre. Folio ne peut pas être utilisé sur ces PC pour le moment.
+> Windows 11 **Smart App Control** can block Folio without a “Run anyway” option. Folio does not currently work on those PCs.
 
-### Ouvrir les fichiers `.md` d'un double-clic
-
-Clic droit sur un fichier `.md` › **Ouvrir avec** › **Choisir une autre application** › **Folio** › **Toujours**.
+To open `.md` files with a double click, right-click a `.md` file, then choose **Open with › Choose another app › Folio › Always**.
 
 ### Linux
 
-**Ubuntu / Debian :** téléchargez le fichier `.deb`, puis ouvrez-le avec votre gestionnaire de logiciels. Vous pouvez aussi l’installer depuis son dossier avec :
+**Ubuntu / Debian:** download the `.deb` file and open it with your software manager. You can also run this command from the download folder:
 
 ```bash
 sudo apt install ./Folio-Linux-x64.deb
 ```
 
-**Version portable :** téléchargez l’AppImage, autorisez son exécution dans les propriétés du fichier, puis ouvrez-le. Depuis son dossier :
+**Portable AppImage:** download the AppImage, allow it to run in the file properties, then open it. Or run:
 
 ```bash
 chmod +x Folio-Linux-x64.AppImage
 ./Folio-Linux-x64.AppImage
 ```
 
-Si votre environnement empêche le montage d’une AppImage, utilisez le mode d’extraction du lanceur :
+If the AppImage cannot be mounted, try:
 
 ```bash
 APPIMAGE_EXTRACT_AND_RUN=1 ./Folio-Linux-x64.AppImage
 ```
 
-Les versions Linux sont destinées aux ordinateurs **x64** et sont vérifiées sous **Ubuntu 24.04**. Pour associer les `.md` à Folio, utilisez **Ouvrir avec** dans votre gestionnaire de fichiers ; le paquet `.deb` ajoute Folio au menu des applications.
+Linux downloads are for **64-bit x86 (x64)** computers and are tested on **Ubuntu 24.04**. Use **Open with** in your file manager to open `.md` files with Folio. The `.deb` package adds Folio to your applications menu.
 
-### Mettre à jour
+### Update
 
-Folio ne se met pas à jour tout seul. Pour passer à la dernière version :
+Folio does not update automatically.
 
-1. **Fermez Folio.**
-2. Téléchargez la version correspondant à votre système avec les liens en haut de la page.
-3. Sur Windows, lancez l’installateur. Sur Linux, installez le nouveau `.deb` ou remplacez votre AppImage.
+1. Close Folio.
+2. Download the latest version for your system from the table above.
+3. On Windows, run the installer. On Linux, install the new `.deb` or replace your AppImage.
 
-Inutile de désinstaller l'ancienne version : la nouvelle la remplace et garde vos réglages, vos espaces et vos dossiers. Votre version s'affiche dans le menu **⋯** › **À propos de Folio**.
+Your settings, spaces, folders and documents are kept. Check your version in **⋯ › About Folio**.
 
-### Désinstaller
+### Uninstall
 
-- **Windows :** **Paramètres › Applications › Applications installées › Folio › Désinstaller**.
-- **Linux .deb :** désinstallez Folio avec votre gestionnaire de logiciels ou `sudo apt remove folio-markdown`.
-- **Linux AppImage :** supprimez le fichier AppImage.
+- **Windows:** **Settings › Apps › Installed apps › Folio › Uninstall**.
+- **Linux .deb:** use your software manager or run `sudo apt remove folio-markdown`.
+- **Linux AppImage:** delete the AppImage file.
 
-## Raccourcis par défaut
+## Default shortcuts
 
-Le tableau utilise les touches Windows / Linux.
+These shortcuts work on Windows and Linux. You can change them in Settings with **F1**.
 
-| Action | Raccourci |
+| Action | Shortcut |
 | --- | --- |
-| Ouvrir un fichier / nouveau document | <kbd>Ctrl</kbd>+<kbd>O</kbd> / <kbd>Ctrl</kbd>+<kbd>N</kbd> |
-| Enregistrer | <kbd>Ctrl</kbd>+<kbd>S</kbd> |
-| Lecture / édition | <kbd>Ctrl</kbd>+<kbd>E</kbd> |
-| Afficher ou masquer l'aperçu (édition) | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>P</kbd> |
-| Rechercher | <kbd>Ctrl</kbd>+<kbd>F</kbd> |
-| Sommaire | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>O</kbd> |
-| Panneau Dossiers | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>D</kbd> |
-| Onglet suivant / onglet n° 1 à 9 | <kbd>Ctrl</kbd>+<kbd>Tab</kbd> / <kbd>Ctrl</kbd>+<kbd>1</kbd>…<kbd>9</kbd> |
-| Rouvrir l'onglet fermé | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>T</kbd> |
-| Panneau vertical : déplier ou réduire | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>B</kbd> |
-| Panneau vertical : masquer ou afficher | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>M</kbd> |
-| Espace suivant / précédent | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>Pg suiv.</kbd> / <kbd>Pg préc.</kbd> |
-| Exporter en PDF / imprimer | <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>E</kbd> / <kbd>Ctrl</kbd>+<kbd>P</kbd> |
-| Plein écran | <kbd>F11</kbd> |
-| Paramètres | <kbd>Ctrl</kbd>+<kbd>,</kbd> |
-| Tous les raccourcis, modifiables | <kbd>F1</kbd> |
+| Open a file / new document | <kbd>Ctrl</kbd>+<kbd>O</kbd> / <kbd>Ctrl</kbd>+<kbd>N</kbd> |
+| Save | <kbd>Ctrl</kbd>+<kbd>S</kbd> |
+| Switch between reading and editing | <kbd>Ctrl</kbd>+<kbd>E</kbd> |
+| Show or hide the editing preview | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> |
+| Find | <kbd>Ctrl</kbd>+<kbd>F</kbd> |
+| Outline | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> |
+| Folders panel | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> |
+| Next tab / tab 1 to 9 | <kbd>Ctrl</kbd>+<kbd>Tab</kbd> / <kbd>Ctrl</kbd>+<kbd>1</kbd>…<kbd>9</kbd> |
+| Reopen a closed tab | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> |
+| Collapse or expand vertical tabs | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> |
+| Hide or show the tab panel | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> |
+| Next / previous space | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Page Down</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Page Up</kbd> |
+| Export PDF / print | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> / <kbd>Ctrl</kbd>+<kbd>P</kbd> |
+| Full screen | <kbd>F11</kbd> |
+| Settings | <kbd>Ctrl</kbd>+<kbd>,</kbd> |
+| Keyboard shortcuts | <kbd>F1</kbd> |
 
 ---
 
-<sub>Folio intègre des logiciels libres (Electron, markdown-it, KaTeX, Mermaid, CodeMirror, highlight.js…) et les polices Source Serif 4, Inter et JetBrains Mono. Leurs licences sont reproduites dans <code>THIRD-PARTY-NOTICES.txt</code>, dans le dossier d'installation de Folio.</sub>
+<sub>Folio uses open-source software (Electron, markdown-it, KaTeX, Mermaid, CodeMirror, highlight.js) and the Source Serif 4, Inter and JetBrains Mono fonts. Their licenses are included in <code>THIRD-PARTY-NOTICES.txt</code> in the Folio installation folder.</sub>
