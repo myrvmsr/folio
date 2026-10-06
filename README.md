@@ -5,18 +5,33 @@
 <h1 align="center">Folio</h1>
 
 <p align="center">
-  Un lecteur et éditeur de fichiers Markdown (<code>.md</code>) pour Windows, pensé pour la lecture.
+  Un lecteur et éditeur de fichiers Markdown (<code>.md</code>) pour Windows, Mac et Linux, pensé pour la lecture.
 </p>
 
 <p align="center">
-  <a href="https://github.com/myrvmsr/folio/releases/latest/download/Folio-Setup.exe"><b>Télécharger Folio pour Windows</b></a><br>
-  <sub>Windows 10 et 11, 64 bits · environ 100 Mo · gratuit</sub><br>
+  <b>Gratuit · fonctionne hors ligne</b><br>
   <sub>Français · English · Español · Deutsch · Nederlands · Italiano · Português</sub>
 </p>
+
+| Votre ordinateur | Télécharger |
+| --- | --- |
+| Windows 10 ou 11, 64 bits | [Installateur Windows](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Setup.exe) |
+| Mac avec puce Apple (M1, M2, M3, M4…) | [Folio pour Mac Apple Silicon](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Mac-arm64.dmg) |
+| Mac avec processeur Intel | [Folio pour Mac Intel](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Mac-x64.dmg) |
+| Ubuntu / Debian, 64 bits | [Paquet Linux .deb](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.deb) |
+| Autres distributions Linux, 64 bits | [Version portable AppImage](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.AppImage) |
+
+Les fichiers [SHA256SUMS.txt](https://github.com/myrvmsr/folio/releases/latest/download/SHA256SUMS.txt) permettent de vérifier l’intégrité des téléchargements.
 
 <p align="center">
   <img src="captures/lecture.png" alt="Folio affichant un document Markdown" width="860">
 </p>
+
+## Nouveau dans la version 1.3
+
+- **Folio arrive sur Mac et Linux.** Deux versions Mac (Apple Silicon et Intel), un paquet Linux `.deb` et une version portable `.AppImage`.
+- Raccourcis avec **⌘ sur Mac**, ouverture des fichiers depuis Finder et gestion des chemins propre à chaque système.
+- Les installateurs sont vérifiés sur Windows, macOS Intel, macOS Apple Silicon et Ubuntu avant publication : démarrage, affichage Markdown, édition, enregistrement automatique, opérations sur les dossiers et création de PDF.
 
 ## Nouveau dans la version 1.2
 
@@ -67,7 +82,7 @@ Déjà installé ? Voir [Mettre à jour](#mettre-à-jour).
 
 - Le bouton en forme de dossier, à côté du logo, ouvre le **panneau Dossiers**. Ajoutez-y un ou plusieurs dossiers : leurs sous-dossiers et leurs documents Markdown s'affichent en arbre, et un clic ouvre un document.
 - **Créez** un document ou un sous-dossier depuis les boutons qui apparaissent au survol d'un dossier ; le nom se tape directement dans l'arbre.
-- **Renommez** (<kbd>F2</kbd>), **rangez** un fichier en le glissant sur un autre dossier, ou **mettez-le à la corbeille** (<kbd>Suppr</kbd>), récupérable dans la corbeille de Windows. Les onglets ouverts suivent le mouvement.
+- **Renommez** (<kbd>F2</kbd>), **rangez** un fichier en le glissant sur un autre dossier, ou **mettez-le à la corbeille** (<kbd>Suppr</kbd>), récupérable dans la corbeille du système. Les onglets ouverts suivent le mouvement.
 - Le panneau se met à jour tout seul quand un autre programme ajoute ou supprime des fichiers. Les dossiers cachés (`.git`, `.obsidian`…) n'y apparaissent pas.
 
 <p align="center">
@@ -99,7 +114,7 @@ Déjà installé ? Voir [Mettre à jour](#mettre-à-jour).
 
 ### Le thème à votre goût
 
-- **Mode clair, sombre ou automatique** (il suit alors Windows).
+- **Mode clair, sombre ou automatique** (il suit alors le système).
 - **Couleur d'accentuation** : huit couleurs proposées, ou n'importe quelle autre.
 - **Couleur de fond et couleur du texte**, réglées séparément pour le mode clair et le mode sombre. Toute l'interface s'accorde à vos couleurs, et Folio prévient si le texte devient difficile à lire.
 - **Quatre polices** (Sérif, Sans, Système, Mono), taille du texte et largeur de lecture.
@@ -110,23 +125,25 @@ Déjà installé ? Voir [Mettre à jour](#mettre-à-jour).
 
 ### En sept langues
 
-- Folio parle **français, anglais, espagnol, allemand, néerlandais, italien et portugais**. Par défaut, il suit la langue de Windows.
+- Folio parle **français, anglais, espagnol, allemand, néerlandais, italien et portugais**. Par défaut, il suit la langue du système.
 - Changement immédiat dans **Paramètres › Langue** : menus, boutons, messages, noms des touches et correcteur orthographique.
 
 ### Des raccourcis clavier personnalisables
 
 - Chaque action a un raccourci modifiable : cliquez dessus, tapez la nouvelle combinaison, c'est enregistré. Une action peut avoir plusieurs raccourcis.
-- Une combinaison ne peut servir qu'à une seule action : si elle est déjà prise, Folio le signale et propose de la réattribuer. Les raccourcis de Windows (copier, coller, annuler…) restent protégés.
+- Une combinaison ne peut servir qu'à une seule action : si elle est déjà prise, Folio le signale et propose de la réattribuer. Les raccourcis du système (copier, coller, annuler…) restent protégés.
 - Les claviers AZERTY sont pris en charge.
 
-### Bien intégré à Windows
+### Vos fichiers sur chaque système
 
 - Ouvrez vos `.md` d'un double-clic, en les glissant dans la fenêtre, depuis le **panneau Dossiers** ou depuis les **fichiers récents** de l'écran d'accueil.
-- Une seule fenêtre : un fichier ouvert depuis l'Explorateur s'ajoute en onglet.
-- Copier le texte Markdown ou le chemin du fichier, afficher le fichier dans l'Explorateur.
+- Une seule fenêtre : un fichier ouvert depuis le gestionnaire de fichiers s'ajoute en onglet.
+- Copier le texte Markdown ou le chemin du fichier, afficher le fichier dans le gestionnaire de fichiers.
 - Fonctionne **hors ligne** : les polices et les outils d'affichage sont intégrés.
 
 ## Installation
+
+### Windows
 
 1. Téléchargez **Folio-Setup.exe** avec le lien en haut de la page. Si le navigateur demande confirmation, choisissez **Conserver**.
 2. Lancez le fichier. Si Windows affiche « Windows a protégé votre ordinateur », cliquez sur **Informations complémentaires**, puis **Exécuter quand même** : cet avertissement apparaît parce que Folio n'est pas signé numériquement.
@@ -139,21 +156,63 @@ Déjà installé ? Voir [Mettre à jour](#mettre-à-jour).
 
 Clic droit sur un fichier `.md` › **Ouvrir avec** › **Choisir une autre application** › **Folio** › **Toujours**.
 
+### Mac
+
+**macOS 13 (Ventura) ou version ultérieure**, sur Intel ou Apple Silicon. Les installateurs sont vérifiés sous macOS 15.
+
+1. Choisissez la version **Apple Silicon** ou **Intel**. Vous pouvez vérifier votre processeur dans le menu Apple › **À propos de ce Mac**.
+2. Ouvrez le fichier `.dmg`, puis glissez **Folio** dans **Applications**.
+3. Lancez Folio depuis **Applications**.
+
+Cette première version Mac n’est pas encore validée par Apple. Si macOS bloque l’ouverture, après avoir essayé de lancer Folio, allez dans **Réglages Système › Confidentialité et sécurité › Ouvrir quand même**, puis confirmez. Voir les [instructions d’Apple](https://support.apple.com/fr-fr/102445).
+
+Pour ouvrir les `.md` avec Folio par défaut : sélectionnez un fichier dans Finder › **Lire les informations › Ouvrir avec › Folio › Tout modifier**.
+
+Sur Mac, les raccourcis principaux utilisent **⌘** à la place de **Ctrl** : ⌘+O pour ouvrir, ⌘+S pour enregistrer, ⌘+E pour éditer. **Ctrl+Tab** reste le raccourci pour changer d’onglet ; **Ctrl+⌘+F** active le plein écran.
+
+### Linux
+
+**Ubuntu / Debian :** téléchargez le fichier `.deb`, puis ouvrez-le avec votre gestionnaire de logiciels. Vous pouvez aussi l’installer depuis son dossier avec :
+
+```bash
+sudo apt install ./Folio-Linux-x64.deb
+```
+
+**Version portable :** téléchargez l’AppImage, autorisez son exécution dans les propriétés du fichier, puis ouvrez-le. Depuis son dossier :
+
+```bash
+chmod +x Folio-Linux-x64.AppImage
+./Folio-Linux-x64.AppImage
+```
+
+Si votre environnement empêche le montage d’une AppImage, utilisez le mode d’extraction du lanceur :
+
+```bash
+APPIMAGE_EXTRACT_AND_RUN=1 ./Folio-Linux-x64.AppImage
+```
+
+Les versions Linux sont destinées aux ordinateurs **x64** et sont vérifiées sous **Ubuntu 24.04**. Pour associer les `.md` à Folio, utilisez **Ouvrir avec** dans votre gestionnaire de fichiers ; le paquet `.deb` ajoute Folio au menu des applications.
+
 ### Mettre à jour
 
 Folio ne se met pas à jour tout seul. Pour passer à la dernière version :
 
 1. **Fermez Folio.**
-2. Téléchargez **Folio-Setup.exe** avec le lien en haut de la page : il donne toujours la dernière version.
-3. Lancez-le. Si Windows affiche à nouveau « Windows a protégé votre ordinateur », cliquez sur **Informations complémentaires**, puis **Exécuter quand même**.
+2. Téléchargez la version correspondant à votre système avec les liens en haut de la page.
+3. Sur Windows, lancez l’installateur. Sur Mac, remplacez Folio dans **Applications**. Sur Linux, installez le nouveau `.deb` ou remplacez votre AppImage.
 
 Inutile de désinstaller l'ancienne version : la nouvelle la remplace et garde vos réglages, vos espaces et vos dossiers. Votre version s'affiche dans le menu **⋯** › **À propos de Folio**.
 
 ### Désinstaller
 
-**Paramètres** de Windows › **Applications** › **Applications installées** › **Folio** › **Désinstaller**.
+- **Windows :** **Paramètres › Applications › Applications installées › Folio › Désinstaller**.
+- **Mac :** placez Folio depuis **Applications** dans la corbeille.
+- **Linux .deb :** désinstallez Folio avec votre gestionnaire de logiciels ou `sudo apt remove folio-markdown`.
+- **Linux AppImage :** supprimez le fichier AppImage.
 
 ## Raccourcis par défaut
+
+Le tableau utilise les touches Windows / Linux. Sur Mac, utilisez **⌘** à la place de **Ctrl**, avec les exceptions précisées dans les instructions Mac ci-dessus.
 
 | Action | Raccourci |
 | --- | --- |
