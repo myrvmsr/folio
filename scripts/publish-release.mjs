@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { github } from './github.mjs';
-import { publicChecksums, publicReleaseNotes, publicPlatformNames } from './release-policy.mjs';
+import { publicChecksums, publicReleaseNotes, publicPlatformNames, publicAssets, legacyAliases } from './release-policy.mjs';
 import { validateReleaseEvidence, validateRunJobs } from './quality-gate.mjs';
 const directory = path.resolve(process.argv[2] || '');
 const publish = process.argv.includes('--publish');
@@ -20,6 +20,9 @@ const payloads = new Map(filenames.map((filename) => {
   assert.equal(checksum, checksums[filename], `${filename}: local installer was changed after testing.`);
   return [filename, { bytes, checksum }];
 }));
+for (const [alias, source] of Object.entries(legacyAliases)) payloads.set(alias, payloads.get(source));
+const assetNames = [...payloads.keys()].sort();
+assert.deepEqual(assetNames, publicAssets);
 const run = await github(`/repos/myrvmsr/folio-build/actions/runs/${verification.runId}`);
 assert.equal(run.conclusion, 'success');
 assert.equal(run.head_sha, verification.sourceCommit);
@@ -35,8 +38,8 @@ if (!release) release = await github(`${repository}/releases`, { method: 'POST',
   name: `Folio ${version} — ${publicPlatformNames}`, body: notes, draft: true, prerelease: false,
 } });
 if (!release.draft) throw new Error('This version is already public; do not replace published installers.');
-assert.ok(release.assets.every((asset) => filenames.includes(asset.name)), 'The draft contains installers outside the public distribution policy.');
-for (const filename of filenames) {
+assert.ok(release.assets.every((asset) => assetNames.includes(asset.name)), 'The draft contains installers outside the public distribution policy.');
+for (const filename of assetNames) {
   const { bytes, checksum } = payloads.get(filename);
   let asset = release.assets.find((item) => item.name === filename);
   if (!asset) {
@@ -49,7 +52,7 @@ for (const filename of filenames) {
   if (asset.digest) assert.equal(asset.digest, `sha256:${checksum}`, `${filename}: uploaded digest mismatch`);
 }
 release = await github(`${repository}/releases/${release.id}`);
-assert.deepEqual(release.assets.map((asset) => asset.name).sort(), filenames);
+assert.deepEqual(release.assets.map((asset) => asset.name).sort(), assetNames);
 if (publish) {
   release = await github(`${repository}/releases/${release.id}`, { method: 'PATCH', body: { draft: false, name: `Folio ${version} — ${publicPlatformNames}`, body: notes, make_latest: 'true' } });
 }

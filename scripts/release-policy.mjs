@@ -6,6 +6,9 @@ export const publicTargets = [
   { platform: 'linux', nativePlatform: 'linux', job: 'Linux x64 (Ubuntu 24.04)', packages: ['deb', 'appimage'], artifact: 'installers-linux-x64', files: ['Folio-Linux-x64.AppImage', 'Folio-Linux-x64.deb'] },
 ];
 export const publicInstallers = publicTargets.flatMap((target) => target.files).sort();
+// Folio used to be called Plume: old .../latest/download/Plume-Setup.exe links get a copy of the Windows installer.
+export const legacyAliases = { 'Plume-Setup.exe': 'Folio-Setup.exe' };
+export const publicAssets = [...publicInstallers, ...Object.keys(legacyAliases)].sort();
 export const publicPlatformNames = 'Windows et Linux';
 
 export function publicChecksums(verification) {

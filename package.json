@@ -3,7 +3,7 @@
   "productName": "Folio",
   "version": "1.3.0",
   "description": "A calm place to read, write and organize Markdown. Free, open source, and built for Windows and Linux.",
-  "author": "Folio",
+  "author": "myrvmsr",
   "license": "MIT",
   "private": true,
   "homepage": "https://github.com/myrvmsr/folio",
@@ -131,7 +131,7 @@
       "executableName": "folio",
       "syncDesktopName": true,
       "category": "Office;TextEditor;",
-      "maintainer": "Folio <234964037+myrvmsr@users.noreply.github.com>",
+      "maintainer": "myrvmsr <234964037+myrvmsr@users.noreply.github.com>",
       "artifactName": "Folio-Linux-x64.${ext}",
       "mimeTypes": [
         "text/markdown",

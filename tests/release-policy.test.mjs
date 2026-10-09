@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createRequire } from 'node:module';
-import { publicChecksums, publicManifest, publicReleaseNotes, publicTargets } from '../scripts/release-policy.mjs';
+import { publicChecksums, publicManifest, publicReleaseNotes, publicTargets, publicInstallers, publicAssets, legacyAliases } from '../scripts/release-policy.mjs';
 
 const verification = { checksums: {
   'Folio-Setup.exe': '1'.repeat(64),
@@ -19,6 +19,12 @@ test('public release excludes Mac even when the verified directory contains both
   const manifest = publicManifest(verification).toString();
   assert.equal(manifest.trim().split('\n').length, 3);
   assert.doesNotMatch(manifest, /Mac|\.dmg/);
+});
+
+test('the old Plume download link serves a copy of a public installer, outside the checksum list', () => {
+  assert.deepEqual(publicAssets, ['Folio-Linux-x64.AppImage', 'Folio-Linux-x64.deb', 'Folio-Setup.exe', 'Plume-Setup.exe']);
+  for (const source of Object.values(legacyAliases)) assert.ok(publicInstallers.includes(source));
+  assert.doesNotMatch(publicManifest(verification).toString(), /Plume/);
 });
 
 test('publication refuses a missing or invalid Windows or Linux checksum', () => {

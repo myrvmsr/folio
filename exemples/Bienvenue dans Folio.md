@@ -105,7 +105,7 @@ Ce contenu était caché. Le Markdown à l'intérieur fonctionne aussi : **gras*
 
 </details>
 
-![Une folio](images/folio.svg)
+![Le logo de Folio](images/folio.svg)
 
 ---
 
