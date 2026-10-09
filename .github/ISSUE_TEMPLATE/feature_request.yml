@@ -1,0 +1,27 @@
+name: Idea or feature request
+description: Suggest an improvement for Folio.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. For a substantial change, please wait until we agree on the behavior before writing the code (see [CONTRIBUTING.md](https://github.com/myrvmsr/folio/blob/main/CONTRIBUTING.md)).
+  - type: textarea
+    id: need
+    attributes:
+      label: What would you like to do?
+      description: Describe the situation or the problem, not only the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Your suggestion
+      description: How could Folio help? Sketches and examples are welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Other solutions or workarounds you have considered.

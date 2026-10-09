@@ -1,0 +1,67 @@
+name: Bug report
+description: Something in Folio does not work as expected.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Remove any personal information from your examples and screenshots.
+        For a security problem, do not open a public issue: follow the [security policy](https://github.com/myrvmsr/folio/blob/main/SECURITY.md).
+  - type: input
+    id: version
+    attributes:
+      label: Folio version
+      description: Find it in **⋯ → About Folio**.
+      placeholder: "1.3.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: Operating system
+      options:
+        - Windows 11
+        - Windows 10
+        - Ubuntu / Debian
+        - Other Linux
+        - Other (say which below)
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: How did you install Folio?
+      options:
+        - Windows installer (Folio-Setup.exe)
+        - .deb package
+        - AppImage
+        - Built from source
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a Markdown file containing…
+        2. Press…
+        3. See…
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Example, screenshot or anything else
+      description: A small Markdown sample or a screenshot often helps. You can drag files here.

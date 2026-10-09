@@ -138,7 +138,7 @@ Fonts, rendering libraries and diagram support are bundled with the app. Documen
 
 ## Contributing
 
-Bug reports, fixes, translations and ideas are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), or open an [issue](https://github.com/myrvmsr/folio/issues).
+Bug reports, fixes, translations and ideas are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), or open an [issue](https://github.com/myrvmsr/folio/issues/new/choose). Please follow the [code of conduct](CODE_OF_CONDUCT.md), and report security problems privately as described in the [security policy](SECURITY.md).
 
 Want to improve a translation? The language files are in `src/shared/locales/`. Run `npm run check-locales` after your changes. See [TESTING.md](TESTING.md) for the logic tests and interface scenarios.
 
@@ -152,4 +152,4 @@ Folio's original code, documentation and assets are available under the [MIT Lic
 
 If Folio is useful to you, a star helps others find it.
 
-[Releases](https://github.com/myrvmsr/folio/releases) · [Issues](https://github.com/myrvmsr/folio/issues) · [Privacy](PRIVACY.md)
+[Releases](https://github.com/myrvmsr/folio/releases) · [Issues](https://github.com/myrvmsr/folio/issues) · [Privacy](PRIVACY.md) · [Security](SECURITY.md)

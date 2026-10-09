@@ -1,12 +1,14 @@
 # Contributing to Folio
 
-Thanks for helping make Folio better. Bug reports, small fixes, translations and improvements to reading and editing are welcome.
+Thanks for helping make Folio better. Bug reports, small fixes, translations and improvements to reading and editing are welcome. Please follow the [code of conduct](CODE_OF_CONDUCT.md) in every exchange.
 
 ## Report a bug or suggest an idea
 
-Open an [issue](https://github.com/myrvmsr/folio/issues). For a bug, include your Folio version, operating system, the steps to reproduce it, and what you expected to happen. A small Markdown example or screenshot helps; remove personal information before sharing it.
+Open an [issue](https://github.com/myrvmsr/folio/issues/new/choose) and pick the bug report or idea form. For a bug, include your Folio version, operating system, the steps to reproduce it, and what you expected to happen. A small Markdown example or screenshot helps; remove personal information before sharing it.
 
 For a substantial feature, start with an issue so we can agree on the behavior before you build it.
+
+For a security problem, do not open a public issue: follow the [security policy](SECURITY.md).
 
 ## Run the app
 
