@@ -19,7 +19,7 @@
 | Ubuntu / Debian, 64-bit | [Linux .deb package](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.deb) |
 | Linux, 64-bit (portable) | [AppImage](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.AppImage) |
 
-Use [SHA256SUMS.txt](https://github.com/myrvmsr/folio/releases/latest/download/SHA256SUMS.txt) to check the files after downloading.
+Optional SHA-256 checks are in the collapsed verification section of the [release notes](https://github.com/myrvmsr/folio/releases/latest).
 
 ## What's new in 1.3
 
