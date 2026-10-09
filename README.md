@@ -62,7 +62,7 @@ See [Releases](https://github.com/myrvmsr/folio/releases) for downloads and rele
 | Ubuntu / Debian, x64 | [Folio-Linux-x64.deb](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.deb) |
 | Linux, x64 | [Folio-Linux-x64.AppImage](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.AppImage) |
 
-The Linux packages are tested on Ubuntu 24.04. Download [SHA256SUMS.txt](https://github.com/myrvmsr/folio/releases/latest/download/SHA256SUMS.txt) if you want to verify the files.
+The Linux packages are tested on Ubuntu 24.04. Optional SHA-256 checks are in the collapsed verification section of the [release notes](https://github.com/myrvmsr/folio/releases/latest).
 
 ### Windows
 

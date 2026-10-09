@@ -3,12 +3,17 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { publicChecksums, publicManifest } from './release-policy.mjs';
+import { publicChecksums, publicReleaseNotes } from './release-policy.mjs';
 const directory = path.resolve(process.argv[2] || '');
 const verification = JSON.parse(fs.readFileSync(path.join(directory, 'verification.json'), 'utf8'));
 const checksums = publicChecksums(verification);
-const manifest = publicManifest(verification);
-const expected = [...Object.keys(checksums), 'SHA256SUMS.txt'].sort();
+const expected = Object.keys(checksums).sort();
+const releaseResponse = await fetch('https://api.github.com/repos/myrvmsr/folio/releases/latest');
+assert.equal(releaseResponse.status, 200, 'Latest public release must be available.');
+const release = await releaseResponse.json();
+assert.equal(release.tag_name, `v${verification.version}`, 'Latest release must match the verified version.');
+assert.deepEqual(release.assets.map(asset => asset.name).sort(), expected, 'Only installers belong in the public download list.');
+assert.ok(release.body?.includes(publicReleaseNotes('', verification).trim()), 'Release notes must include the verified checksums in a collapsed section.');
 const readme = fs.readFileSync('publication/README.md', 'utf8');
 const readmeResponse = await fetch('https://raw.githubusercontent.com/myrvmsr/folio/main/README.md');
 assert.equal(readmeResponse.status, 200, 'Public download page must be available.');
@@ -23,11 +28,9 @@ const reports = await Promise.all(expected.map(async (filename) => {
   const hash = createHash('sha256');
   let size = 0;
   for await (const chunk of response.body) { hash.update(chunk); size += chunk.length; }
-  assert.equal(size, filename === 'SHA256SUMS.txt' ? manifest.length : fs.statSync(path.join(directory, filename)).size, `${filename}: truncated download`);
+  assert.equal(size, fs.statSync(path.join(directory, filename)).size, `${filename}: truncated download`);
   const checksum = hash.digest('hex');
-  const expectedChecksum = filename === 'SHA256SUMS.txt'
-    ? createHash('sha256').update(manifest).digest('hex') : checksums[filename];
-  assert.equal(checksum, expectedChecksum, `${filename}: public download differs from the tested installer`);
+  assert.equal(checksum, checksums[filename], `${filename}: public download differs from the tested installer`);
   console.log(`PASS public download: ${filename} (${size} bytes, SHA256 matches)`);
   return { filename, size, checksum, url, checkedAt: new Date().toISOString() };
 }));

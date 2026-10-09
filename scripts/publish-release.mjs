@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { github } from './github.mjs';
-import { publicChecksums, publicManifest, publicPlatformNames } from './release-policy.mjs';
+import { publicChecksums, publicReleaseNotes, publicPlatformNames } from './release-policy.mjs';
 import { validateReleaseEvidence, validateRunJobs } from './quality-gate.mjs';
 const directory = path.resolve(process.argv[2] || '');
 const publish = process.argv.includes('--publish');
@@ -13,11 +13,11 @@ const version = JSON.parse(fs.readFileSync('package.json', 'utf8')).version;
 assert.equal(verification.version, version);
 validateReleaseEvidence(verification);
 const checksums = publicChecksums(verification);
-const filenames = [...Object.keys(checksums), 'SHA256SUMS.txt'].sort();
+const filenames = Object.keys(checksums).sort();
 const payloads = new Map(filenames.map((filename) => {
-  const bytes = filename === 'SHA256SUMS.txt' ? publicManifest(verification) : fs.readFileSync(path.join(directory, filename));
+  const bytes = fs.readFileSync(path.join(directory, filename));
   const checksum = createHash('sha256').update(bytes).digest('hex');
-  if (filename !== 'SHA256SUMS.txt') assert.equal(checksum, checksums[filename], `${filename}: local installer was changed after testing.`);
+  assert.equal(checksum, checksums[filename], `${filename}: local installer was changed after testing.`);
   return [filename, { bytes, checksum }];
 }));
 const run = await github(`/repos/myrvmsr/folio-build/actions/runs/${verification.runId}`);
@@ -29,7 +29,7 @@ const repository = '/repos/myrvmsr/folio';
 const tag = `v${version}`;
 const releases = await github(`${repository}/releases?per_page=100`);
 let release = releases.find((item) => item.tag_name === tag);
-const notes = fs.readFileSync('publication/release-notes.md', 'utf8');
+const notes = publicReleaseNotes(fs.readFileSync('publication/release-notes.md', 'utf8'), verification);
 if (!release) release = await github(`${repository}/releases`, { method: 'POST', body: {
   tag_name: tag, target_commitish: execFileSync('git', ['-C', 'publication', 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
   name: `Folio ${version} — ${publicPlatformNames}`, body: notes, draft: true, prerelease: false,

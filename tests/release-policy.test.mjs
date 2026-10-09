@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createRequire } from 'node:module';
-import { publicChecksums, publicManifest, publicTargets } from '../scripts/release-policy.mjs';
+import { publicChecksums, publicManifest, publicReleaseNotes, publicTargets } from '../scripts/release-policy.mjs';
 
 const verification = { checksums: {
   'Folio-Setup.exe': '1'.repeat(64),
@@ -26,6 +26,21 @@ test('publication refuses a missing or invalid Windows or Linux checksum', () =>
     assert.throws(() => publicChecksums({ checksums: { ...verification.checksums, [filename]: undefined } }), /missing verified installer checksum/);
     assert.throws(() => publicChecksums({ checksums: { ...verification.checksums, [filename]: '../unverified' } }), /missing verified installer checksum/);
   }
+});
+
+test('release notes preserve the description and keep only verified installer checksums in a collapsed section', () => {
+  const notes = publicReleaseNotes('Release notes with a download link.\n', verification);
+  assert.ok(notes.startsWith('Release notes with a download link.\n\n'));
+  assert.match(notes, /<details>\n<summary>Vérifier les téléchargements \(SHA-256\)<\/summary>/);
+  assert.ok(notes.includes(publicManifest(verification).toString().trim()));
+  assert.doesNotMatch(notes, /<details[^>]*\bopen\b|SHA256SUMS\.txt|Mac|\.dmg/);
+  assert.equal(publicReleaseNotes(notes, verification), notes);
+  const changed = {checksums: {...verification.checksums, 'Folio-Setup.exe': 'a'.repeat(64)}};
+  const updated = publicReleaseNotes(notes, changed);
+  assert.equal(updated.match(/<details>/g).length, 1);
+  assert.ok(updated.includes(`${'a'.repeat(64)}  Folio-Setup.exe`));
+  assert.ok(!updated.includes(`${'1'.repeat(64)}  Folio-Setup.exe`));
+  assert.throws(() => publicReleaseNotes('Release notes', {checksums: {}}), /missing verified installer checksum/);
 });
 
 test('native CI targets match the allowed public release targets', () => {

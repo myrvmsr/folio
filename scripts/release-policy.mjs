@@ -20,3 +20,23 @@ export function publicManifest(verification) {
   return Buffer.from(Object.entries(publicChecksums(verification))
     .map(([filename, checksum]) => `${checksum}  ${filename}\n`).join(''));
 }
+
+// Keep optional integrity checks in the notes, outside the installer download list.
+export function publicReleaseNotes(notes, verification) {
+  const description = notes.replace(/<!-- folio-checksums:start -->[\s\S]*?<!-- folio-checksums:end -->/g, '').trim();
+  const section = [
+    '<!-- folio-checksums:start -->',
+    '<details>',
+    '<summary>Vérifier les téléchargements (SHA-256)</summary>',
+    '',
+    'Ces empreintes permettent de vérifier l’intégrité des installateurs. Cette étape est facultative.',
+    '',
+    '```text',
+    publicManifest(verification).toString('utf8').trimEnd(),
+    '```',
+    '',
+    '</details>',
+    '<!-- folio-checksums:end -->',
+  ].join('\n');
+  return `${description ? `${description}\n\n` : ''}${section}\n`;
+}
