@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' file:; script-src 'self' file:; style-src 'self' file: 'unsafe-inline'; img-src * file: data: blob:; media-src * file: data: blob:; font-src 'self' file: data:; connect-src 'self' file:; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>Folio</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <!-- Les textes sont posés par i18n.js (attributs data-i18n…) dans la langue choisie. -->
+    <div id="app">
+      <header class="titlebar" id="titlebar">
+        <div class="brand" id="brand" title="Folio"></div>
+        <button class="icon-btn" id="btn-files" type="button" data-i18n-aria="files.title"></button>
+        <button class="space-switch" id="space-switch" type="button" hidden></button>
+        <div class="tabs" id="tabs" role="tablist" data-i18n-aria="tabs.openDocuments"></div>
+        <button class="icon-btn tab-new" id="btn-new-tab" type="button" data-i18n-aria="action.open"></button>
+        <div class="titlebar-title" id="titlebar-title"></div>
+        <div class="titlebar-spacer"></div>
+        <div class="titlebar-actions" id="doc-actions">
+          <div class="segmented" id="mode-switch" role="group" data-i18n-aria="mode.group">
+            <button type="button" data-mode="preview"></button>
+            <button type="button" data-mode="edit"></button>
+          </div>
+          <button class="icon-btn" id="btn-split" type="button" data-i18n-aria="mode.split"></button>
+          <button class="icon-btn" id="btn-outline" type="button" data-i18n-aria="outline.title"></button>
+        </div>
+        <div class="titlebar-actions">
+          <button class="icon-btn" id="btn-theme" type="button" data-i18n-aria="theme.button"></button>
+          <button class="icon-btn" id="btn-menu" type="button" data-i18n-title="menu.title" data-i18n-aria="menu.title"></button>
+        </div>
+      </header>
+
+      <div class="workspace" id="workspace">
+        <div class="vtabs-slot" id="vtabs-slot">
+          <div class="vtabs-edge" aria-hidden="true"></div>
+          <aside class="vtabs" id="vtabs" data-i18n-aria="tabs.panel">
+            <div class="vtabs-header">
+              <button class="vtabs-space" id="vtabs-space" type="button"></button>
+              <button class="icon-btn small vtabs-pin" id="vtabs-pin" type="button"></button>
+              <button class="icon-btn small vtabs-hide" id="vtabs-hide" type="button" data-i18n-aria="tabs.hide"></button>
+            </div>
+            <div class="vtabs-list" id="vtabs-list" role="tablist" aria-orientation="vertical"></div>
+            <div class="vtabs-actions" id="vtabs-actions"></div>
+            <div class="vtabs-spaces" id="vtabs-spaces" data-i18n-aria="spaces.title"></div>
+            <div class="vtabs-resize" id="vtabs-resize" data-i18n-title="panel.resize"></div>
+          </aside>
+        </div>
+        <aside class="files" id="files" data-i18n-aria="files.title">
+          <div class="files-inner">
+            <div class="files-header">
+              <span class="files-title" data-i18n="files.title"></span>
+              <button class="icon-btn small" id="files-add" type="button"></button>
+              <button class="icon-btn small" id="files-more" type="button" data-i18n-title="files.more" data-i18n-aria="files.more"></button>
+            </div>
+            <div class="files-tree" id="files-tree" role="tree"></div>
+          </div>
+          <div class="files-resize" id="files-resize" data-i18n-title="panel.resize"></div>
+        </aside>
+        <aside class="outline" id="outline" data-i18n-aria="outline.title">
+          <div class="outline-inner">
+            <div class="outline-header" data-i18n="outline.title"></div>
+            <nav class="outline-list" id="outline-list"></nav>
+          </div>
+        </aside>
+        <main class="views" id="views">
+          <section class="welcome" id="welcome"></section>
+        </main>
+      </div>
+
+      <div class="findbar" id="findbar" hidden>
+        <span class="find-icon" id="find-icon"></span>
+        <input id="find-input" type="text" data-i18n-placeholder="find.placeholder" spellcheck="false" autocomplete="off" />
+        <span class="find-count" id="find-count"></span>
+        <button class="icon-btn small" id="find-prev" type="button" data-i18n-title="find.previousHint" data-i18n-aria="find.previous"></button>
+        <button class="icon-btn small" id="find-next" type="button" data-i18n-title="find.nextHint" data-i18n-aria="find.next"></button>
+        <button class="icon-btn small" id="find-close" type="button" data-i18n-title="find.closeHint" data-i18n-aria="common.close"></button>
+      </div>
+
+      <div class="drop-overlay" id="drop-overlay" hidden>
+        <div class="drop-card"><span id="drop-icon"></span><span data-i18n="drop.hint"></span></div>
+      </div>
+      <div class="toasts" id="toasts" aria-live="polite"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

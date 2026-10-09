@@ -1,201 +1,155 @@
-<p align="center">
-  <img src="folio.svg" width="88" alt="Folio icon">
-</p>
+<img src="build/icon.png" width="80" alt="Folio icon">
 
-<h1 align="center">Folio</h1>
+# Folio
 
-<p align="center">
-  A Markdown reader and editor for Windows and Linux.
-</p>
+A calm place to read, write and organize Markdown on Windows and Linux.
 
-<p align="center">
-  <b>Free · works offline</b><br>
-  <sub>French · English · Spanish · German · Dutch · Italian · Portuguese</sub>
-</p>
+Open a note, give it room to breathe, and switch to editing when an idea comes. Keep your folders, tabs and projects together, with a live preview and a look that feels like yours.
 
-| Your system | Download |
-| --- | --- |
-| Windows 10 or 11, 64-bit | [Windows installer](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Setup.exe) |
-| Ubuntu / Debian, 64-bit | [Linux .deb package](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.deb) |
-| Linux, 64-bit (portable) | [AppImage](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.AppImage) |
+**Free · Open source · MIT · Works offline**
 
-Optional SHA-256 checks are in the collapsed verification section of the [release notes](https://github.com/myrvmsr/folio/releases/latest).
+[Download](#install) · [Build from source](#build-from-source) · [Contribute](CONTRIBUTING.md) · [Report a bug](https://github.com/myrvmsr/folio/issues)
 
-## What's new in 1.3
+![Reading a Markdown document in Folio](store/listing/en-US/reading.png)
 
-- **Linux support:** a `.deb` package for Ubuntu / Debian and a portable AppImage.
-- Open Markdown files from your Linux file manager.
-- On Linux, files such as `Note.md` and `note.md` are handled as separate files.
+---
 
-Already installed? See [Update](#update).
+## Why
 
-## Why Folio?
+Markdown is a lovely format for notes, documentation and ideas. Folio gives those files a comfortable place to live: readable typography, a quiet interface, and the tools you need to move between reading, writing and organizing.
 
-Folio keeps reading and editing Markdown simple. You can read your notes, manage your files and change the look in one app.
+Your documents stay in the folders you choose. No Folio account, no subscription, no special file format. Open the same files in another editor whenever you like.
 
-- **A clear view:** read your documents with simple menus and an outline to find each section.
-- **Workspaces:** keep work, personal notes and projects in separate spaces, each with its own tabs.
-- **Several folders:** open your notes folders together in one panel.
-- **Your own look:** choose the font, text size, theme and colors that suit you.
-
-Your files stay on your computer. You can work offline.
+Folio is open source under the MIT License. Read the code, build it yourself, change it, or help make it better.
 
 ## Features
 
-### Reading
+- 📖 **Read comfortably** — clear typography, an outline that follows your reading, foldable sections and search that ignores accents.
+- ✍️ **Edit with a live preview** — Markdown on one side, the result on the other. Hide the preview when you want more room to write. Includes find and replace, formatting shortcuts and an optional spell checker.
+- 💾 **Save as you go** — auto save after a change, at a regular interval, or when switching tabs or windows. Manual saving is available too.
+- 📂 **Keep your folders close** — add several folders, create documents and subfolders, rename, move by drag and drop, or send files to the system trash. Open tabs follow renamed and moved files.
+- 🗂️ **Make room for each project** — horizontal or vertical tabs, named spaces with their own colors, and session restoration when you return.
+- 🧮 **More than plain text** — highlighted code with a Copy button, tables, math formulas, Mermaid diagrams, clickable task lists, callouts, footnotes and YAML properties.
+- 🔄 **Stay in sync with your files** — Folio watches for changes from other apps and asks what to do when they conflict with your unsaved edits.
+- 🎨 **Make it yours** — light, dark or automatic theme; custom accent, background and text colors; font, text size and reading width.
+- ⌨️ **Shortcuts that fit your keyboard** — customizable combinations, conflict detection and support for AZERTY layouts.
+- 📄 **Share a finished document** — export to PDF or print on a white background.
+- 🌍 **Seven languages** — English, français, español, Deutsch, Nederlands, italiano and português. Folio follows your system language; you can change it in Settings.
+- 🔒 **Local by default** — no ads, usage analytics or document sync service. Read and edit documents with local resources offline. Remote images and spell-check dictionaries may use the network; see the [privacy policy](PRIVACY.md).
 
-- Headings, lists, quotes, tables, images and links.
-- Code highlighting and a **Copy** button on code blocks.
-- Math formulas and Mermaid diagrams.
-- Task lists you can click, note and warning boxes, footnotes and sections you can fold.
-- YAML information at the top of a file is shown in a **Properties** panel.
-- An outline to jump to headings, and search that ignores accents.
+![Markdown editing with a live preview in Folio](store/listing/en-US/editing.png)
 
-<p align="center">
-  <img src="captures/lecture.png" alt="A Markdown document open in Folio" width="860">
-</p>
+<details>
+<summary>See folders and dark mode</summary>
 
-### Editing
+![Folders and documents in Folio](store/listing/en-US/folders.png)
 
-- Edit the Markdown text next to a live preview. You can hide the preview.
-- **Auto save:** save one second after a change, at a set time interval or when switching tabs or windows. You can also turn it off.
-- Keyboard shortcuts for bold, italic, strikethrough, code and links.
-- Find and replace, and an optional spell checker.
+![Folio in dark mode](store/listing/en-US/dark.png)
 
-<p align="center">
-  <img src="captures/edition.png" alt="Markdown text on the left and a live preview on the right" width="860">
-</p>
+</details>
 
-### Folders
+## Versions
 
-- Add several folders and browse their files in the **Folders** panel.
-- Create files and folders, rename them, move them by drag and drop, or send them to the system trash.
-- Open tabs follow files when you rename or move them.
-- The panel updates when files change. Hidden folders such as `.git` and `.obsidian` stay out of the list.
+The latest downloadable release is [Folio 1.3.0](https://github.com/myrvmsr/folio/releases/tag/v1.3.0), published on October 6, 2026. It adds Linux packages, file-manager integration and correct handling of case-sensitive file names.
 
-<p align="center">
-  <img src="captures/dossiers.png" alt="Folders and documents in the Folders panel" width="860">
-</p>
+See [Releases](https://github.com/myrvmsr/folio/releases) for downloads and release notes. Source changes may be newer than the published installers.
 
-### Tabs
+## Install
 
-- Open several documents in tabs, at the top or on the left.
-- Keep the left panel open, show only its icons, or hide it. A hidden panel appears when you move the mouse to the left edge.
-- Switch tabs with the keyboard, reopen a closed tab, or close all other tabs.
+| Your system | Download |
+| --- | --- |
+| Windows 10 / 11, x64 | [Folio-Setup.exe](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Setup.exe) |
+| Ubuntu / Debian, x64 | [Folio-Linux-x64.deb](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.deb) |
+| Linux, x64 | [Folio-Linux-x64.AppImage](https://github.com/myrvmsr/folio/releases/latest/download/Folio-Linux-x64.AppImage) |
 
-<table>
-  <tr>
-    <td align="center"><img src="captures/onglets-verticaux.png" alt="The vertical tab panel, expanded"><br><sub>Expanded tabs</sub></td>
-    <td align="center"><img src="captures/onglets-reduits.png" alt="The vertical tab panel, collapsed to icons"><br><sub>Tabs as icons</sub></td>
-  </tr>
-</table>
-
-### Workspaces
-
-- Create **spaces**, each with its own name, color and tabs.
-- Move a tab to another space, and switch spaces with a click or a shortcut.
-- Folio can reopen your spaces and tabs when you start the app.
-
-### Appearance
-
-- Light, dark or automatic theme.
-- Change the accent, background and text colors.
-- Choose from four fonts: **Serif**, **Sans**, **System** and **Mono**.
-- Change the text size and reading width, or use full screen.
-
-<p align="center">
-  <img src="captures/apparence.png" alt="Appearance settings with custom colors" width="860">
-</p>
-
-### Languages and shortcuts
-
-- Seven languages: French, English, Spanish, German, Dutch, Italian and Portuguese.
-- Folio uses your system language by default. Change it in **Settings › Language**.
-- Change keyboard shortcuts in Settings with **F1**. Folio checks for conflicts and supports AZERTY keyboards.
-
-### Files and export
-
-- Open `.md` files with a double click, drag and drop, the Folders panel or the recent files list.
-- Reload files when another app changes them. Folio asks what to do if you have unsaved changes.
-- Web links open in your browser. Links to other Markdown files open in Folio.
-- Copy the Markdown text or file path, or show a file in your file manager.
-- Export to PDF or print on a white background.
-
-## Installation
+The Linux packages are tested on Ubuntu 24.04. Optional SHA-256 checks are in the collapsed verification section of the [release notes](https://github.com/myrvmsr/folio/releases/latest).
 
 ### Windows
 
-1. Download **Folio-Setup.exe** from the table above. If your browser asks, choose **Keep**.
-2. Run the file. If Windows shows “Windows protected your PC”, click **More info**, then **Run anyway**. This message appears because Folio is not digitally signed.
-3. Folio installs for your user account, without administrator rights, and opens.
+Run `Folio-Setup.exe`. Folio installs for your user account without administrator rights, adds shortcuts and opens.
 
-> [!NOTE]
-> Windows 11 **Smart App Control** can block Folio without a “Run anyway” option. Folio does not currently work on those PCs.
+The installer is not digitally signed. If SmartScreen shows “Windows protected your PC”, use **More info → Run anyway**. Windows 11 **Smart App Control** may block it without that option; the current GitHub installer cannot be used on those PCs.
 
-To open `.md` files with a double click, right-click a `.md` file, then choose **Open with › Choose another app › Folio › Always**.
+To open Markdown files with a double click, right-click a `.md` file and choose **Open with → Choose another app → Folio → Always**.
 
 ### Linux
 
-**Ubuntu / Debian:** download the `.deb` file and open it with your software manager. You can also run this command from the download folder:
+Ubuntu / Debian:
 
 ```bash
 sudo apt install ./Folio-Linux-x64.deb
 ```
 
-**Portable AppImage:** download the AppImage, allow it to run in the file properties, then open it. Or run:
+AppImage:
 
 ```bash
 chmod +x Folio-Linux-x64.AppImage
 ./Folio-Linux-x64.AppImage
 ```
 
-If the AppImage cannot be mounted, try:
+If your system cannot mount the AppImage, run `APPIMAGE_EXTRACT_AND_RUN=1 ./Folio-Linux-x64.AppImage`. The `.deb` package adds Folio to your applications menu; use your file manager's **Open with** menu to associate `.md` files.
+
+### Update or uninstall
+
+Folio's GitHub builds do not update automatically. Close the app, download the latest package and install it over the previous version, or replace your AppImage. Your documents and settings are kept. Find your version in **⋯ → About Folio**.
+
+To uninstall, use **Windows Settings → Apps → Folio → Uninstall**, run `sudo apt remove folio-markdown` for the `.deb`, or delete the AppImage.
+
+### Build from source
+
+Requirements: **Node.js 24 LTS**, npm, and a Windows or Linux desktop environment.
 
 ```bash
-APPIMAGE_EXTRACT_AND_RUN=1 ./Folio-Linux-x64.AppImage
+git clone https://github.com/myrvmsr/folio.git
+cd folio
+npm ci
+npm start
 ```
 
-Linux downloads are for **64-bit x86 (x64)** computers and are tested on **Ubuntu 24.04**. Use **Open with** in your file manager to open `.md` files with Folio. The `.deb` package adds Folio to your applications menu.
+To make an installer, run the command on its target system:
 
-### Update
+```bash
+npm run dist:win      # Windows: release/Folio-Setup.exe
+npm run dist:linux    # Linux: release/Folio-Linux-x64.AppImage and .deb
+```
 
-Folio does not update automatically.
+Linux development and tests need Electron's system libraries and sandbox setup. The [build workflow](.github/workflows/build.yml) lists the Ubuntu dependencies and setup; [CONTRIBUTING.md](CONTRIBUTING.md) covers development and checks.
 
-1. Close Folio.
-2. Download the latest version for your system from the table above.
-3. On Windows, run the installer. On Linux, install the new `.deb` or replace your AppImage.
+## Things to try
 
-Your settings, spaces, folders and documents are kept. Check your version in **⋯ › About Folio**.
-
-### Uninstall
-
-- **Windows:** **Settings › Apps › Installed apps › Folio › Uninstall**.
-- **Linux .deb:** use your software manager or run `sudo apt remove folio-markdown`.
-- **Linux AppImage:** delete the AppImage file.
-
-## Default shortcuts
-
-These shortcuts work on Windows and Linux. You can change them in Settings with **F1**.
-
-| Action | Shortcut |
+| Do this | Folio does that |
 | --- | --- |
-| Open a file / new document | <kbd>Ctrl</kbd>+<kbd>O</kbd> / <kbd>Ctrl</kbd>+<kbd>N</kbd> |
-| Save | <kbd>Ctrl</kbd>+<kbd>S</kbd> |
-| Switch between reading and editing | <kbd>Ctrl</kbd>+<kbd>E</kbd> |
-| Show or hide the editing preview | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> |
-| Find | <kbd>Ctrl</kbd>+<kbd>F</kbd> |
-| Outline | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> |
-| Folders panel | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> |
-| Next tab / tab 1 to 9 | <kbd>Ctrl</kbd>+<kbd>Tab</kbd> / <kbd>Ctrl</kbd>+<kbd>1</kbd>…<kbd>9</kbd> |
-| Reopen a closed tab | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> |
-| Collapse or expand vertical tabs | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> |
-| Hide or show the tab panel | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> |
-| Next / previous space | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Page Down</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Page Up</kbd> |
-| Export PDF / print | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> / <kbd>Ctrl</kbd>+<kbd>P</kbd> |
-| Full screen | <kbd>F11</kbd> |
-| Settings | <kbd>Ctrl</kbd>+<kbd>,</kbd> |
-| Keyboard shortcuts | <kbd>F1</kbd> |
+| Drop a Markdown file onto the window | Opens it in a tab |
+| Press `Ctrl+E` | Switches between reading and editing |
+| Press `Ctrl+Shift+P` while editing | Shows or hides the live preview |
+| Click a task-list checkbox | Updates the Markdown file |
+| Press `Ctrl+Shift+D` | Opens the Folders panel |
+| Add a space in the vertical tabs panel | Gives a project its own name, color and tabs |
+| Press `Ctrl+Shift+E` | Exports the current document to PDF |
+| Press `F1` | Opens the keyboard shortcut settings |
 
----
+Try the [example document](exemples/Bienvenue%20dans%20Folio.md) for formulas, diagrams, code and task lists. A [detailed user guide in French](docs/USER_GUIDE.fr.md) covers settings, folders, spaces and auto save.
 
-<sub>Folio uses open-source software (Electron, markdown-it, KaTeX, Mermaid, CodeMirror, highlight.js) and the Source Serif 4, Inter and JetBrains Mono fonts. Their licenses are included in <code>THIRD-PARTY-NOTICES.txt</code> in the Folio installation folder.</sub>
+## How it works
+
+Folio is an Electron desktop app written in JavaScript and CSS. The main process handles files, folder watching, system integration and PDF export. The interface renders Markdown with markdown-it, sanitizes HTML with DOMPurify, displays formulas with KaTeX and diagrams with Mermaid, and uses CodeMirror for editing.
+
+Fonts, rendering libraries and diagram support are bundled with the app. Documents remain ordinary files on disk; settings and session information are stored locally in your user profile.
+
+## Contributing
+
+Bug reports, fixes, translations and ideas are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), or open an [issue](https://github.com/myrvmsr/folio/issues).
+
+Want to improve a translation? The language files are in `src/shared/locales/`. Run `npm run check-locales` after your changes. See [TESTING.md](TESTING.md) for the logic tests and interface scenarios.
+
+## Credits
+
+Built by [myrvmsr](https://github.com/myrvmsr). Folio uses open-source libraries and the Source Serif 4, Inter and JetBrains Mono fonts; see [third-party credits and notices](THIRD-PARTY.md).
+
+## License
+
+Folio's original code, documentation and assets are available under the [MIT License](LICENSE). Use it, modify it and redistribute it while preserving the license and copyright notice. Third-party software and fonts retain their own licenses.
+
+If Folio is useful to you, a star helps others find it.
+
+[Releases](https://github.com/myrvmsr/folio/releases) · [Issues](https://github.com/myrvmsr/folio/issues) · [Privacy](PRIVACY.md)

@@ -1,0 +1,18 @@
+export const scenarios = {
+  rendering: 'renders a complete Markdown document offline',
+  editing: 'edits text, updates the preview and saves automatically',
+  newFile: 'creates an untitled document and saves it to a real file',
+  unsaved: 'protects unsaved edits when closing a tab',
+  tasks: 'saves task checkboxes and opens relative Markdown links',
+  search: 'finds text without accents and navigates the outline',
+  tabs: 'switches, closes and reopens tabs with the keyboard',
+  spaces: 'creates workspaces and moves tabs between them',
+  appearance: 'changes themes, fonts, colors and interface languages',
+  folders: 'manages multiple folders and refuses invalid or duplicate names',
+  external: 'reloads external changes and keeps unsaved edits on conflict',
+  restart: 'restores settings, workspaces, folders and tabs after restart',
+  export: 'exports an actual PDF and copies Markdown code',
+  errors: 'recovers when an open file is deleted and recreated',
+  shortcuts: 'customizes a shortcut and reports conflicts',
+  untrusted: 'renders untrusted Markdown without executing its scripts',
+};

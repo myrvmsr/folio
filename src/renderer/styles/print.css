@@ -1,0 +1,147 @@
+/* Impression et export PDF : uniquement le document actif, en thème clair. */
+
+@media print {
+  /* Les couleurs personnalisées (variables posées sur :root) ne s'appliquent pas au papier. */
+  :root {
+    color-scheme: light !important;
+    --bg-000: #ffffff !important;
+    --bg-100: #ffffff !important;
+    --bg-200: #f5f4ed !important;
+    --bg-300: #f0eee6 !important;
+    --bg-400: #e8e6dc !important;
+    --bg-500: #d9d6ca !important;
+    --text-000: #141413 !important;
+    --text-100: #1f1e1d !important;
+    --text-200: #3d3d3a !important;
+    --text-300: #5e5d59 !important;
+    --text-400: #73726c !important;
+    --text-500: #9c9a92 !important;
+    --border-100: rgb(31 30 29 / 0.06) !important;
+    --border-200: rgb(31 30 29 / 0.1) !important;
+    --border-300: rgb(31 30 29 / 0.15) !important;
+    --border-400: rgb(31 30 29 / 0.25) !important;
+    --hover: rgb(31 30 29 / 0.05) !important;
+    --hover-strong: rgb(31 30 29 / 0.08) !important;
+    --accent: #c96442 !important;
+    --accent-hover: #b4552f !important;
+    --accent-text: #b4552f !important;
+    --accent-soft: rgb(201 100 66 / 0.1) !important;
+    --accent-fg: #ffffff !important;
+    --surface: #ffffff !important;
+    --tab-active: #ffffff !important;
+    --code-bg: #f5f4ed !important;
+    --code-border: rgb(31 30 29 / 0.12) !important;
+    --inline-code-fg: #9a3412 !important;
+    --inline-code-bg: rgb(31 30 29 / 0.04) !important;
+    --table-head: #f5f4ed !important;
+    --table-stripe: rgb(31 30 29 / 0.02) !important;
+  }
+
+  html,
+  body {
+    height: auto;
+    overflow: visible;
+    background: #fff;
+  }
+
+  #app {
+    display: block;
+    height: auto;
+  }
+
+  .titlebar,
+  .vtabs-slot,
+  .files,
+  .outline,
+  .findbar,
+  .toasts,
+  .drop-overlay,
+  .doc-banner,
+  .editor-pane,
+  .pane-divider,
+  .welcome,
+  .menu,
+  .modal-overlay,
+  .lightbox,
+  .code-copy,
+  .mermaid-toolbar,
+  .doc-view[hidden] {
+    display: none !important;
+  }
+
+  .workspace,
+  .views,
+  .doc-view,
+  .doc-panes,
+  .preview-pane {
+    position: static !important;
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: transparent;
+  }
+
+  .doc-view[data-mode='source'] .preview-pane {
+    display: block !important;
+  }
+
+  .markdown-body {
+    max-width: none;
+    margin: 0;
+    padding: 0 !important;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3,
+  .markdown-body h4 {
+    break-after: avoid;
+  }
+
+  .markdown-body .code-block,
+  .markdown-body .table-wrap,
+  .markdown-body .mermaid-block,
+  .markdown-body img,
+  .markdown-body .math-display,
+  .markdown-body .markdown-alert,
+  .markdown-body blockquote {
+    break-inside: avoid;
+  }
+
+  .markdown-body .code-header {
+    position: static;
+    height: 28px;
+  }
+
+  .markdown-body .code-block.no-lang .code-header {
+    display: none;
+  }
+
+  .markdown-body .code-block.no-lang pre {
+    padding-top: 14px;
+  }
+
+  .markdown-body pre {
+    overflow: visible;
+  }
+
+  .markdown-body pre code {
+    min-width: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  .markdown-body .table-wrap {
+    overflow: visible;
+  }
+
+  .markdown-body a {
+    text-decoration-color: currentColor;
+  }
+
+  .markdown-body .frontmatter {
+    display: none;
+  }
+}
