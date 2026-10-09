@@ -24,9 +24,7 @@ This code applies to issues, pull requests, discussions, commit messages and eve
 
 ## Reporting a problem
 
-If someone's behavior bothers you, you can mention [@myrvmsr](https://github.com/myrvmsr) in the conversation. To report it privately, open the **⋯** menu of the comment, issue or pull request, choose **Report content** and send it to the repository maintainers. You can also report it to GitHub from the same menu.
-
-Every report is read and handled with discretion.
+If someone's behavior bothers you, you can mention [@myrvmsr](https://github.com/myrvmsr) in the conversation. If you would rather not do it in public, open the **⋯** menu of the comment, issue or pull request and choose **Report content** to report it to GitHub, which handles harassment and abuse.
 
 ## Consequences
 
