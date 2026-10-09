@@ -1,0 +1,11 @@
+node_modules/
+dist/
+release/
+.folio-checks/
+publication/
+build/preview/
+*.p12
+*.pfx
+.env
+.env.*
+store/identity.local.json

@@ -1,0 +1,73 @@
+name: Prepare Folio for Microsoft Store
+on:
+  workflow_dispatch:
+    inputs:
+      preview:
+        description: Build a preview before reserving the Microsoft Store identity
+        type: boolean
+        default: true
+permissions:
+  contents: read
+jobs:
+  store:
+    name: Windows Store MSIX x64
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run check-locales
+      - run: npm run build
+      - name: Check application UI
+        run: node scripts/test-e2e.mjs --label=store-source
+      - name: Capture Store screenshots
+        run: npm run screenshots:store
+      - name: Build and inspect MSIX
+        shell: pwsh
+        env:
+          FOLIO_STORE_PREVIEW: ${{ inputs.preview }}
+          FOLIO_STORE_IDENTITY_JSON: ${{ vars.FOLIO_STORE_IDENTITY_JSON }}
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+        run: |
+          if ($env:FOLIO_STORE_PREVIEW -eq 'true') {
+            npm run dist:store:preview
+          } else {
+            npm run dist:store
+          }
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Check installed MSIX through Windows activation
+        shell: pwsh
+        env:
+          FOLIO_EPHEMERAL_RUNNER: ${{ runner.environment }}
+        run: ./scripts/test-store-install.ps1
+      - name: Save Store package and listing material
+        uses: actions/upload-artifact@v4
+        with:
+          name: folio-microsoft-store-x64
+          path: |
+            release/store*/Folio-Store-*.msix
+            release/store*/package-info.json
+            store/listing/
+            store/README.md
+            store/PRIVACY.md
+          if-no-files-found: error
+          retention-days: 30
+      - name: Save test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: folio-microsoft-store-checks
+          path: |
+            .folio-checks/unit/
+            .folio-checks/locales/
+            .folio-checks/e2e/store-source/
+            .folio-checks/store-install/**/*.json
+            .folio-checks/store-install/**/*.png
+            .folio-checks/store-install/**/*.pdf
+          include-hidden-files: true
+          retention-days: 14

@@ -1,0 +1,104 @@
+/* Coloration syntaxique (palette « One Light / One Dark »), partagée par
+   l'aperçu (highlight.js) et l'éditeur (CodeMirror). */
+
+:root {
+  --hl-fg: #383a42;
+  --hl-comment: #a0a1a7;
+  --hl-keyword: #a626a4;
+  --hl-tag: #e45649;
+  --hl-literal: #0184bb;
+  --hl-string: #50a14f;
+  --hl-number: #986801;
+  --hl-attr: #986801;
+  --hl-title: #4078f2;
+  --hl-type: #c18401;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --hl-fg: #c9cdd4;
+    --hl-comment: #7f848e;
+    --hl-keyword: #c678dd;
+    --hl-tag: #e06c75;
+    --hl-literal: #56b6c2;
+    --hl-string: #98c379;
+    --hl-number: #d19a66;
+    --hl-attr: #d19a66;
+    --hl-title: #61afef;
+    --hl-type: #e5c07b;
+  }
+}
+
+.hljs {
+  color: var(--hl-fg);
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: var(--hl-comment);
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: var(--hl-keyword);
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: var(--hl-tag);
+}
+
+.hljs-literal {
+  color: var(--hl-literal);
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: var(--hl-string);
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: var(--hl-number);
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: var(--hl-title);
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: var(--hl-type);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}

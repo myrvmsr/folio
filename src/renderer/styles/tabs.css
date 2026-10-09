@@ -1,0 +1,568 @@
+/* ------------------------------------------------------------------ Onglets (communs) */
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  border: 0.5px solid transparent;
+  border-radius: 9px;
+  color: var(--text-300);
+  cursor: default;
+}
+
+.tab:hover {
+  background: var(--hover);
+  color: var(--text-200);
+}
+
+.tab.active {
+  background: var(--tab-active);
+  color: var(--text-000);
+  border-color: var(--border-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.tab.dragging {
+  opacity: 0.45;
+}
+
+.tab.missing .tab-name {
+  text-decoration: line-through;
+  text-decoration-color: var(--text-500);
+}
+
+.tab.pulse {
+  animation: tab-pulse 0.9s ease-out;
+}
+
+@keyframes tab-pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--accent-soft), var(--shadow-sm);
+  }
+  40% {
+    box-shadow: 0 0 0 4px var(--accent-soft), var(--shadow-sm);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent, var(--shadow-sm);
+  }
+}
+
+.tab-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: none;
+  color: var(--text-400);
+}
+
+.tab.active .tab-icon {
+  color: var(--accent);
+}
+
+.tab-icon .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.tab-badge {
+  display: none;
+}
+
+.tab-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.tab-close {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--text-400);
+  opacity: 0;
+}
+
+.tab-close .icon {
+  width: 13px;
+  height: 13px;
+  grid-area: 1 / 1;
+}
+
+.tab:hover .tab-close,
+.tab.active .tab-close,
+.tab.dirty .tab-close {
+  opacity: 1;
+}
+
+.tab-close:hover {
+  background: var(--hover-strong);
+  color: var(--text-100);
+}
+
+.tab-dot {
+  grid-area: 1 / 1;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: none;
+}
+
+.tab.dirty .tab-close .icon {
+  display: none;
+}
+
+.tab.dirty .tab-dot {
+  display: block;
+}
+
+.tab.dirty .tab-close:hover .icon {
+  display: block;
+}
+
+.tab.dirty .tab-close:hover .tab-dot {
+  display: none;
+}
+
+/* ------------------------------------------------------------------ Onglets horizontaux */
+
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  min-width: 0;
+  flex: 0 1 auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 1px;
+}
+
+.tabs .tab {
+  flex: 0 1 auto;
+  min-width: 96px;
+  max-width: 230px;
+  height: 30px;
+  padding: 0 5px 0 10px;
+}
+
+#app.tabs-vertical .tabs,
+#app.tabs-vertical .tab-new,
+#app.tabs-vertical .space-switch {
+  display: none !important;
+}
+
+/* Sélecteur d'espace dans la barre de titre. */
+.space-switch {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: none;
+  max-width: 170px;
+  height: 28px;
+  padding: 0 8px 0 9px;
+  margin-right: 4px;
+  border: 0.5px solid var(--border-200);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--space-color, var(--accent)) 10%, transparent);
+  color: var(--text-100);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: default;
+}
+
+.space-switch:hover,
+.space-switch.pressed {
+  background: color-mix(in srgb, var(--space-color, var(--accent)) 18%, transparent);
+}
+
+.space-dot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--space-color, var(--accent));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--space-color, var(--accent)) 22%, transparent);
+}
+
+.space-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.space-chevron {
+  display: grid;
+  color: var(--text-400);
+}
+
+.space-chevron .icon {
+  width: 13px;
+  height: 13px;
+}
+
+/* Titre du document (disposition verticale : les onglets ne sont plus en haut). */
+.titlebar-title {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding-left: 6px;
+  color: var(--text-200);
+  font-size: 12.5px;
+  font-weight: 550;
+}
+
+#app.tabs-vertical .titlebar-title {
+  display: flex;
+}
+
+.title-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title-dirty {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ------------------------------------------------------------------ Panneau vertical */
+
+.vtabs-slot {
+  position: relative;
+  z-index: 35;
+  min-width: 0;
+}
+
+.vtabs {
+  --panel-bg: color-mix(in srgb, var(--space-color, var(--accent)) 5%, var(--bg-200));
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--panel-bg);
+  border-right: 0.5px solid var(--border-200);
+  transition: width 0.16s ease, box-shadow 0.16s ease;
+}
+
+#app.tabs-vertical .vtabs {
+  display: flex;
+}
+
+/* Survol : le panneau s'ouvre par-dessus le contenu, sans le déplacer. */
+#app.tabs-vertical.vtabs-peek .vtabs {
+  width: var(--vtabs-width, 248px);
+  border-right-color: var(--border-300);
+  box-shadow: var(--shadow-lg);
+}
+
+#app.tabs-vertical.vtabs-hidden:not(.vtabs-peek) .vtabs {
+  visibility: hidden;
+  width: 0;
+}
+
+.vtabs-edge {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  z-index: 1;
+}
+
+#app.tabs-vertical.vtabs-hidden .vtabs-edge {
+  display: block;
+}
+
+.vtabs-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 8px 8px 10px;
+  flex: none;
+}
+
+.vtabs-space {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 32px;
+  padding: 0 8px 0 9px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-000);
+  font-size: 13px;
+  font-weight: 650;
+  text-align: left;
+  cursor: default;
+}
+
+.vtabs-space:hover,
+.vtabs-space.pressed {
+  background: var(--hover-strong);
+}
+
+.vtabs-pin,
+.vtabs-hide {
+  flex: none;
+}
+
+/* Panneau masqué puis ouvert au survol : le bouton « masquer » n'a plus d'objet. */
+#app.tabs-vertical.vtabs-hidden .vtabs-hide {
+  display: none;
+}
+
+/* Bord gauche sensible quand le panneau est masqué : un liseré apparaît à l'approche. */
+.vtabs-edge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.vtabs-edge:hover::after {
+  opacity: 0.55;
+}
+
+.vtabs-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2px 8px 6px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar) transparent;
+}
+
+.vtabs-list .tab {
+  height: 34px;
+  padding: 0 5px 0 10px;
+  margin-bottom: 2px;
+  gap: 9px;
+}
+
+.vtabs-list .tab-name {
+  font-size: 13px;
+}
+
+.vtabs-list .tab-icon .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.vtabs-list .tab.active {
+  background: color-mix(in srgb, var(--space-color, var(--accent)) 9%, var(--tab-active));
+}
+
+.vtabs-empty {
+  padding: 8px 10px;
+  color: var(--text-500);
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+
+.vtabs-actions {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 6px 8px;
+  border-top: 0.5px solid var(--border-200);
+}
+
+.vtab-action {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 32px;
+  padding: 0 8px 0 10px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-300);
+  font-size: 13px;
+  text-align: left;
+  cursor: default;
+}
+
+.vtab-action:hover {
+  background: var(--hover-strong);
+  color: var(--text-100);
+}
+
+.vtab-action kbd {
+  margin-left: auto;
+  color: var(--text-500);
+  font: 500 11px var(--font-ui);
+  white-space: nowrap;
+}
+
+.vtab-action .tab-name {
+  font-weight: 450;
+}
+
+.vtabs-spaces {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 12px 14px;
+  border-top: 0.5px solid var(--border-200);
+}
+
+.space-chip {
+  --chip: var(--accent);
+  width: 28px;
+  height: 28px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  background: var(--chip);
+  color: #fff;
+  font: 650 12.5px var(--font-ui);
+  opacity: 0.55;
+  cursor: default;
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+
+.space-chip:hover {
+  opacity: 0.9;
+}
+
+.space-chip.active {
+  opacity: 1;
+  box-shadow: 0 0 0 2px var(--panel-bg), 0 0 0 3.5px var(--chip);
+}
+
+.space-chip.drop-target {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+.space-chip.add {
+  border: 1px dashed var(--border-400);
+  background: transparent;
+  color: var(--text-400);
+  opacity: 1;
+}
+
+.space-chip.add:hover {
+  background: var(--hover-strong);
+  color: var(--text-100);
+}
+
+.space-chip.add .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.vtabs-resize {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -3px;
+  bottom: 0;
+  width: 6px;
+  cursor: col-resize;
+  z-index: 2;
+}
+
+#app.tabs-vertical.vtabs-expanded .vtabs-resize {
+  display: block;
+}
+
+.vtabs-resize:hover,
+#app.resizing .vtabs-resize {
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+/* Panneau réduit (« 90 % ») : une colonne d'icônes. */
+#app.tabs-vertical.vtabs-collapsed:not(.vtabs-peek) .vtabs {
+  align-items: stretch;
+}
+
+#app.tabs-vertical.vtabs-collapsed:not(.vtabs-peek) .vtabs :is(.tab-name, .tab-close, .space-name, .space-chevron, .vtab-action kbd) {
+  display: none;
+}
+
+#app.tabs-vertical.vtabs-collapsed:not(.vtabs-peek) .vtabs-header {
+  flex-direction: column;
+  padding: 10px 6px 6px;
+}
+
+#app.tabs-vertical.vtabs-collapsed:not(.vtabs-peek) .vtabs-space {
+  flex: none;
+  width: 36px;
+  justify-content: center;
+  padding: 0;
+}
+
+#app.tabs-vertical.vtabs-collapsed:not(.vtabs-peek) :is(.vtabs-pin, .vtabs-hide) {
+  display: none;
+}
+
+#app.tabs-vertical.vtabs-collapsed:not(.vtabs-peek) :is(.vtabs-list, .vtabs-actions) {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+#app.tabs-vertical.vtabs-collapsed:not(.vtabs-peek) :is(.vtabs-list .tab, .vtab-action) {
+  justify-content: center;
+  width: 38px;
+  padding: 0;
+}
+
+#app.tabs-vertical.vtabs-collapsed:not(.vtabs-peek) .vtabs-empty {
+  display: none;
+}
+
+#app.tabs-vertical.vtabs-collapsed:not(.vtabs-peek) .tab.dirty .tab-badge {
+  display: block;
+  position: absolute;
+  top: -3px;
+  right: -4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--panel-bg);
+}
+
+#app.tabs-vertical.vtabs-collapsed:not(.vtabs-peek) .vtabs-spaces {
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0 14px;
+}

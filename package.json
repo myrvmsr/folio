@@ -1,0 +1,212 @@
+{
+  "name": "folio-markdown",
+  "productName": "Folio",
+  "version": "1.3.0",
+  "description": "A calm place to read, write and organize Markdown. Free, open source, and built for Windows and Linux.",
+  "author": "Folio",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/myrvmsr/folio",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myrvmsr/folio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/myrvmsr/folio/issues"
+  },
+  "desktopName": "com.folio.markdown.desktop",
+  "main": "src/main/main.js",
+  "scripts": {
+    "build": "node scripts/build-renderer.mjs",
+    "watch": "node scripts/build-renderer.mjs --watch",
+    "start": "node scripts/build-renderer.mjs && electron .",
+    "icons": "electron scripts/make-icons.js",
+    "install-app": "node scripts/build-renderer.mjs && node scripts/install.mjs",
+    "uninstall-app": "node scripts/install.mjs --uninstall",
+    "dist": "npm run dist:win",
+    "dist:win": "node scripts/build-renderer.mjs && electron-builder --win nsis --publish never",
+    "dist:store": "node scripts/build-store.mjs",
+    "dist:store:preview": "node scripts/build-store.mjs --preview",
+    "verify:store": "node scripts/verify-store.mjs",
+    "screenshots:store": "node scripts/store-screenshots.mjs",
+    "dist:mac": "node scripts/build-renderer.mjs && electron-builder --mac dmg --publish never",
+    "dist:linux": "node scripts/build-renderer.mjs && electron-builder --linux AppImage deb --publish never",
+    "test": "node scripts/unit-tests.mjs",
+    "test:smoke": "node scripts/build-renderer.mjs && node scripts/smoke.mjs",
+    "test:e2e": "node scripts/build-renderer.mjs && node scripts/test-e2e.mjs",
+    "pack": "node scripts/build-renderer.mjs && electron-builder --win dir",
+    "check-locales": "node scripts/check-locales.mjs"
+  },
+  "build": {
+    "appId": "com.folio.markdown",
+    "productName": "Folio",
+    "copyright": "Copyright © 2026 myrvmsr",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/main/**",
+      "src/shared/**",
+      "build/icon.ico",
+      "build/file-icon.ico",
+      "build/icon.png",
+      "dist/renderer/**",
+      "package.json"
+    ],
+    "asar": false,
+    "electronLanguages": [
+      "fr",
+      "en-US",
+      "es",
+      "de",
+      "nl",
+      "it",
+      "pt-PT",
+      "pt-BR"
+    ],
+    "extraResources": [
+      {
+        "from": "LICENSE",
+        "to": "LICENSE.folio.txt"
+      },
+      {
+        "from": "dist/THIRD-PARTY-NOTICES.txt",
+        "to": "THIRD-PARTY-NOTICES.txt"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "build/icon.png",
+      "category": "public.app-category.productivity",
+      "artifactName": "Folio-Mac-${arch}.${ext}",
+      "identity": "-",
+      "hardenedRuntime": false,
+      "notarize": false,
+      "fileAssociations": [
+        {
+          "ext": [
+            "md",
+            "markdown",
+            "mdown",
+            "mkd",
+            "mkdn",
+            "mdwn",
+            "mdx"
+          ],
+          "name": "Markdown",
+          "role": "Editor"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.png",
+      "executableName": "folio",
+      "syncDesktopName": true,
+      "category": "Office;TextEditor;",
+      "maintainer": "Folio <234964037+myrvmsr@users.noreply.github.com>",
+      "artifactName": "Folio-Linux-x64.${ext}",
+      "mimeTypes": [
+        "text/markdown",
+        "text/x-markdown"
+      ],
+      "fileAssociations": [
+        {
+          "ext": [
+            "md",
+            "markdown",
+            "mdown",
+            "mkd",
+            "mkdn",
+            "mdwn",
+            "mdx"
+          ],
+          "name": "Markdown",
+          "mimeType": "text/markdown"
+        }
+      ],
+      "desktop": {
+        "entry": {
+          "Keywords": "Markdown;Editor;Notes;Folio;"
+        }
+      }
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "runAfterFinish": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Folio",
+      "installerLanguages": [
+        "fr_FR",
+        "en_US",
+        "es_ES",
+        "de_DE",
+        "nl_NL",
+        "it_IT",
+        "pt_PT"
+      ],
+      "language": "1033",
+      "artifactName": "Folio-Setup.${ext}",
+      "multiLanguageInstaller": true
+    }
+  },
+  "devDependencies": {
+    "@codemirror/autocomplete": "^6.20.3",
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-markdown": "^6.5.2",
+    "@codemirror/lang-yaml": "^6.1.3",
+    "@codemirror/language": "^6.12.4",
+    "@codemirror/language-data": "^6.5.2",
+    "@codemirror/search": "^6.7.2",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.13",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/source-serif-4": "^5.3.0",
+    "@lezer/highlight": "^1.2.5",
+    "@playwright/test": "1.63.0",
+    "codemirror": "^6.0.2",
+    "dompurify": "^3.4.16",
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "highlight.js": "^11.12.0",
+    "katex": "^0.19.0",
+    "markdown-it": "^15.0.2",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-github-alerts": "^1.0.1",
+    "markdown-it-texmath": "^1.0.0",
+    "mermaid": "^12.0.0",
+    "unzipper": "0.12.5",
+    "yaml": "^2.9.1"
+  }
+}
