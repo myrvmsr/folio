@@ -195,7 +195,7 @@
     "@lezer/highlight": "^1.2.5",
     "@playwright/test": "1.63.0",
     "codemirror": "^6.0.2",
-    "dompurify": "^3.4.16",
+    "dompurify": "^3.4.17",
     "electron": "^44.5.1",
     "electron-builder": "^26.15.3",
     "esbuild": "^0.28.2",
